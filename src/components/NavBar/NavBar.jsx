@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="nav-wrapper">
       <div className="nav-container">
@@ -11,7 +14,7 @@ const Navbar = () => {
           </div>
           <p className="tagline">Build | Scale | Lead</p>
         </div>
-        <ul className="nav-links">
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li className="active">Home</li>
           <li>About</li>
           <li>
@@ -24,6 +27,14 @@ const Navbar = () => {
           <button className="call-btn">
             Book a Call <span className="arrow">→</span>
           </button>
+        </div>
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
       </div>
