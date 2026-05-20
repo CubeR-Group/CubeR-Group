@@ -1,12 +1,13 @@
 .nav-wrapper {
   width: 100%;
-  padding: 20px 0;
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 .nav-container {
-  width: 1100px;
+  width: 100%;
+  max-width: 1300px;
   height: 70px;
   background: #f3f5f8;
   border-radius: 18px;
@@ -14,12 +15,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
+
 .nav-logo {
   display: flex;
   flex-direction: column;
-  line-height: 1;
 }
 
 .logo-box {
@@ -27,70 +28,91 @@
   font-size: 20px;
 }
 
-.cube {
-  color: #222;
-}
-
 .r {
   color: #f04e3e;
-  margin-left: 2px;
 }
 
 .tagline {
   font-size: 10px;
   color: #888;
-  margin-top: 2px;
 }
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 36px;
-  align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links li {
-  font-size: 16px;
-  color: #333;
   cursor: pointer;
   position: relative;
-  transition: 0.3s;
 }
+
 .nav-links li.active::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
   background: #f04e3e;
-  border-radius: 2px;
-}
-.nav-links li:hover {
-  color: #f04e3e;
-}
-.dropdown {
-  font-size: 12px;
-  margin-left: 4px;
 }
 .call-btn {
   background: #f04e3e;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 10px 18px;
   border-radius: 12px;
-  font-size: 14px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.3s;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
-.call-btn:hover {
-  background: #d94335;
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: black;
+  transition: 0.3s;
 }
-.arrow {
-  font-size: 16px;
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 900px) {
+  
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #f3f5f8;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    border-radius: 16px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none; 
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
