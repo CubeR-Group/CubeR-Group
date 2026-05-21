@@ -1,0 +1,92 @@
+.who {
+  padding: 120px 20px;
+  text-align: center;
+  background: #f4f1ea;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 180, 140, 0.12),
+    rgba(255, 180, 140, 0)
+  );
+}
+
+.who-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+.who-tag {
+  color: #ef4e3a;
+  letter-spacing: 4px;
+  font-size: 35px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.who-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #1f2d3d;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.who-desc {
+  color: #4a5568;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stats {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 120px;
+  text-align: left;
+}
+
+.stat {
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 20px;
+}
+
+
+.stat-number {
+  font-size: 40px;
+  color: #e85d4f;
+  font-weight: 600;
+}
+.stat p {
+  margin-top: 10px;
+  color: #4a5568;
+  font-size: 16px;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+.delay {
+  transition-delay: 0.3s;
+}
+.delay2 {
+  transition-delay: 0.5s;
+}
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .who-title {
+    font-size: 30px;
+  }
+}
