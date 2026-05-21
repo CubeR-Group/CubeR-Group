@@ -6,10 +6,17 @@ import Footer from "./components/footer/footer";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<CRGHomePage />} />
-      </Routes>
+      
+      <div className="page-bg">  
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={<CRGHomePage />}
+          />
+        </Routes>
+      </div>
+
       <Footer />
     </Router>
   );
