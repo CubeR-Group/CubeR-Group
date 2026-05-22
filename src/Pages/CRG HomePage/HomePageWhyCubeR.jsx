@@ -41,7 +41,7 @@ const FeatureCard = ({ item, isMobile }) => {
         overflow: "hidden",
       }}
     >
-      {/* Image */}
+  
       <div
         style={{
           flex: 1,
@@ -66,7 +66,6 @@ const FeatureCard = ({ item, isMobile }) => {
         />
       </div>
 
-      {/* Text */}
       <div
         style={{
           flex: 1,

@@ -1,59 +1,68 @@
 import { useEffect, useState, useRef } from "react";
 import "./WhoWeAre.css";
 
-const Counter = ({ target, suffix = "" }) => {
+/* 🔥 Counter now depends on trigger */
+const Counter = ({ target, suffix = "", start }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
+    if (!start) return;
 
-          let start = 0;
-          const duration = 1500;
-          const increment = target / (duration / 16);
+    let current = 0;
+    const duration = 1500;
+    const increment = target / (duration / 16);
 
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.4 }
-    );
+    const timer = setInterval(() => {
+      current += increment;
 
-    if (ref.current) observer.observe(ref.current);
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, 16);
 
-    return () => observer.disconnect();
-  }, [target]);
+    return () => clearInterval(timer);
+  }, [start, target]);
 
   return (
-    <h2 ref={ref} className="stat-number">
+    <h2 className="stat-number">
       {count}
       {suffix}
     </h2>
   );
 };
 
-
 const HomePageWhoAreWe = () => {
-   const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
+  const [startCount, setStartCount] = useState(false);
+  const statsRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => setShow(true), 200);
   }, []);
 
+  /* 🔥 ONE scroll observer */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (statsRef.current) observer.observe(statsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="who">
       <div className="who-container">
+        
         <p className={`who-tag ${show ? "fade-in" : ""}`}>
           WHO WE ARE?
         </p>
@@ -68,30 +77,31 @@ const HomePageWhoAreWe = () => {
           brings together decades of experience in IT staffing, software
           development, and enterprise communications.
         </p>
-        <div className="stats">
+
+        {/* 🔥 attach ref here */}
+        <div className="stats" ref={statsRef}>
 
           <div className="stat">
-            <Counter target={10} suffix="+" />
+            <Counter target={10} suffix="+" start={startCount} />
             <p>Years building partnerships</p>
           </div>
 
           <div className="stat">
-            <Counter target={500} suffix="+" />
+            <Counter target={500} suffix="+" start={startCount} />
             <p>Projects Delivered</p>
           </div>
 
           <div className="stat">
-            <Counter target={98} suffix="%" />
+            <Counter target={98} suffix="%" start={startCount} />
             <p>Client Satisfaction</p>
           </div>
 
           <div className="stat">
-            <Counter target={150} suffix="+" />
+            <Counter target={150} suffix="+" start={startCount} />
             <p>Expert Team Members</p>
           </div>
 
         </div>
-
       </div>
     </section>
   );
