@@ -10,10 +10,10 @@ const CRGHomePage = () => {
     <>
       <HomePageHero />
       <HomePageWhoAreWe />
-      <HomePageWhyCubeR />
       <HomePageOurServices />
+      <HomePageWhyCubeR />
       <HomePageLeadership />
-      <HomePageContact />
+      {/* <HomePageContact /> */}
     </>
   );
 };
