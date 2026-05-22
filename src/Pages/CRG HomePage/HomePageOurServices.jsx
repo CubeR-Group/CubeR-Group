@@ -25,7 +25,7 @@ const HomePageOurServices = () => {
   return (
     <section
       style={{
-        padding: "90px 24px",
+        padding: "80px 20px",
         background:
           "linear-gradient(90deg, #f4e6de 0%, #f7f4ec 50%, #eef2e7 100%)",
       }}
@@ -35,7 +35,7 @@ const HomePageOurServices = () => {
         style={{
           textAlign: "center",
           maxWidth: "1000px",
-          margin: "0 auto 60px",
+          margin: "0 auto 55px",
         }}
       >
         {/* Small Heading */}
@@ -44,8 +44,8 @@ const HomePageOurServices = () => {
             color: "#f05b43",
             letterSpacing: "4px",
             textTransform: "uppercase",
-            marginBottom: "18px",
-            fontSize: "18px",
+            marginBottom: "16px",
+            fontSize: "clamp(14px, 2vw, 18px)",
             fontWeight: "500",
           }}
         >
@@ -55,9 +55,9 @@ const HomePageOurServices = () => {
         {/* Main Title */}
         <h1
           style={{
-            fontSize: "clamp(42px, 6vw, 74px)",
+            fontSize: "clamp(34px, 7vw, 74px)",
             color: "#0f172a",
-            marginBottom: "24px",
+            marginBottom: "22px",
             fontWeight: "500",
             lineHeight: "1.1",
             letterSpacing: "-2px",
@@ -69,7 +69,7 @@ const HomePageOurServices = () => {
         {/* Subtitle */}
         <p
           style={{
-            fontSize: "clamp(16px, 2vw, 24px)",
+            fontSize: "clamp(15px, 2vw, 24px)",
             color: "#5b6778",
             lineHeight: "1.7",
             maxWidth: "850px",
@@ -85,8 +85,8 @@ const HomePageOurServices = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "28px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "24px",
           alignItems: "stretch",
         }}
       >
@@ -103,28 +103,29 @@ const HomePageOurServices = () => {
       {/* Stats Section */}
       <div
         style={{
-        marginTop: "70px",
-        maxWidth: "1050px",
-        marginInline: "auto",
-        borderRadius: "28px",
-        padding: "40px 32px",
-        background:
-        "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-        gap: "30px",
-        alignItems: "center",
+          marginTop: "70px",
+          maxWidth: "1050px",
+          marginInline: "auto",
+          borderRadius: "28px",
+          padding: "40px 28px",
+          background:
+            "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          gap: "32px",
+          alignItems: "center",
+          textAlign: "center",
         }}
       >
         {/* Stat 1 */}
         <div>
           <h2
             style={{
-            fontSize: "clamp(38px, 4vw, 64px)",
-            color: "#ee8679",
-            marginBottom: "8px",
-            fontWeight: "700",
-            lineHeight: "1",
+              fontSize: "clamp(34px, 5vw, 64px)",
+              color: "#ee8679",
+              marginBottom: "8px",
+              fontWeight: "700",
+              lineHeight: "1",
             }}
           >
             500+
@@ -133,7 +134,7 @@ const HomePageOurServices = () => {
           <p
             style={{
               color: "#5b6778",
-              fontSize: "17px",
+              fontSize: "clamp(15px, 2vw, 17px)",
             }}
           >
             Placements completed
@@ -144,11 +145,11 @@ const HomePageOurServices = () => {
         <div>
           <h2
             style={{
-            fontSize: "clamp(38px, 4vw, 64px)",
-            color: "#ee8679",
-            marginBottom: "8px",
-            fontWeight: "700",
-            lineHeight: "1",
+              fontSize: "clamp(34px, 5vw, 64px)",
+              color: "#ee8679",
+              marginBottom: "8px",
+              fontWeight: "700",
+              lineHeight: "1",
             }}
           >
             120+
@@ -157,7 +158,7 @@ const HomePageOurServices = () => {
           <p
             style={{
               color: "#5b6778",
-              fontSize: "17px",
+              fontSize: "clamp(15px, 2vw, 17px)",
             }}
           >
             Enterprise clients
@@ -168,7 +169,7 @@ const HomePageOurServices = () => {
         <div>
           <h2
             style={{
-              fontSize: "clamp(38px, 4vw, 64px)",
+              fontSize: "clamp(34px, 5vw, 64px)",
               color: "#ee8679",
               marginBottom: "8px",
               fontWeight: "700",
@@ -181,7 +182,7 @@ const HomePageOurServices = () => {
           <p
             style={{
               color: "#5b6778",
-              fontSize: "17px",
+              fontSize: "clamp(15px, 2vw, 17px)",
             }}
           >
             Projects delivered
@@ -192,7 +193,7 @@ const HomePageOurServices = () => {
         <div>
           <h2
             style={{
-              fontSize: "clamp(38px, 4vw, 64px)",
+              fontSize: "clamp(34px, 5vw, 64px)",
               color: "#ee8679",
               marginBottom: "8px",
               fontWeight: "700",
@@ -205,7 +206,7 @@ const HomePageOurServices = () => {
           <p
             style={{
               color: "#5b6778",
-              fontSize: "17px",
+              fontSize: "clamp(15px, 2vw, 17px)",
             }}
           >
             Years of expertise

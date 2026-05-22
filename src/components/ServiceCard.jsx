@@ -4,8 +4,8 @@ const ServiceCard = ({ icon, title, description }) => {
       style={{
         background: "#f8f8f8",
         borderRadius: "28px",
-        padding: "42px",
-        minHeight: "340px",
+        padding: "clamp(24px, 4vw, 42px)",
+        minHeight: "300px",
         transition: "all 0.35s ease",
         cursor: "pointer",
         position: "relative",
@@ -27,15 +27,15 @@ const ServiceCard = ({ icon, title, description }) => {
       {/* Icon */}
       <div
         style={{
-          width: "58px",
-          height: "58px",
+          width: "clamp(50px, 5vw, 58px)",
+          height: "clamp(50px, 5vw, 58px)",
           background: "#fdebe6",
           borderRadius: "18px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginBottom: "32px",
-          fontSize: "24px",
+          marginBottom: "28px",
+          fontSize: "clamp(20px, 2vw, 24px)",
           color: "#f05b43",
         }}
       >
@@ -45,9 +45,9 @@ const ServiceCard = ({ icon, title, description }) => {
       {/* Title */}
       <h2
         style={{
-          fontSize: "clamp(28px, 2vw, 42px)",
+          fontSize: "clamp(24px, 4vw, 42px)",
           color: "#0f172a",
-          marginBottom: "18px",
+          marginBottom: "16px",
           lineHeight: "1.2",
           fontWeight: "600",
         }}
@@ -60,8 +60,8 @@ const ServiceCard = ({ icon, title, description }) => {
         style={{
           color: "#5b6778",
           lineHeight: "1.8",
-          fontSize: "clamp(16px, 1.1vw, 20px)",
-          marginBottom: "38px",
+          fontSize: "clamp(15px, 2vw, 20px)",
+          marginBottom: "34px",
         }}
       >
         {description}
@@ -75,7 +75,7 @@ const ServiceCard = ({ icon, title, description }) => {
           display: "flex",
           gap: "8px",
           alignItems: "center",
-          fontSize: "18px",
+          fontSize: "clamp(15px, 2vw, 18px)",
         }}
       >
         <span>Learn more</span>
