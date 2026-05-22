@@ -3,7 +3,6 @@ import HomePageWhoAreWe from "./HomePageWhoAreWe";
 import HomePageWhyCubeR from "./HomePageWhyCubeR";
 import HomePageOurServices from "./HomePageOurServices";
 import HomePageLeadership from "./HomePageLeadership";
-import HomePageContact from "./HomePageContact";
 
 const CRGHomePage = () => {
   return (
@@ -13,7 +12,6 @@ const CRGHomePage = () => {
       <HomePageOurServices />
       <HomePageWhyCubeR />
       <HomePageLeadership />
-      {/* <HomePageContact /> */}
     </>
   );
 };
