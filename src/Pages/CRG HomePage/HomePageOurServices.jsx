@@ -1,6 +1,36 @@
 import ServiceCard from "../../components/ServiceCard";
+import { useEffect, useState, useRef } from "react";
+
+const useCountOnView = (target, trigger) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) return;
+
+    let start = 0;
+    const duration = 1500;
+    const increment = target / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [trigger, target]);
+
+  return count;
+};
 
 const HomePageOurServices = () => {
+  const statsRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
+
   const services = [
     {
       icon: "👥",
@@ -21,6 +51,24 @@ const HomePageOurServices = () => {
         "Enterprise-grade communication platforms with rock-solid reliability and global reach.",
     },
   ];
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (statsRef.current) observer.observe(statsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+  const count1 = useCountOnView(500, startCount);
+  const count2 = useCountOnView(120, startCount);
+  const count3 = useCountOnView(300, startCount);
+  const count4 = useCountOnView(10, startCount);
 
   return (
     <section
@@ -30,7 +78,6 @@ const HomePageOurServices = () => {
           "linear-gradient(90deg, #f4e6de 0%, #f7f4ec 50%, #eef2e7 100%)",
       }}
     >
-      {/* Heading */}
       <div
         style={{
           textAlign: "center",
@@ -38,7 +85,6 @@ const HomePageOurServices = () => {
           margin: "0 auto 55px",
         }}
       >
-        {/* Small Heading */}
         <p
           style={{
             color: "#f05b43",
@@ -52,7 +98,6 @@ const HomePageOurServices = () => {
           Our Services
         </p>
 
-        {/* Main Title */}
         <h1
           style={{
             fontSize: "clamp(34px, 7vw, 74px)",
@@ -66,7 +111,6 @@ const HomePageOurServices = () => {
           AI-grade solutions that take your business further.
         </h1>
 
-        {/* Subtitle */}
         <p
           style={{
             fontSize: "clamp(15px, 2vw, 24px)",
@@ -80,8 +124,6 @@ const HomePageOurServices = () => {
           — not harder.
         </p>
       </div>
-
-      {/* Cards Grid */}
       <div
         style={{
           display: "grid",
@@ -99,9 +141,8 @@ const HomePageOurServices = () => {
           />
         ))}
       </div>
-
-      {/* Stats Section */}
       <div
+        ref={statsRef}  
         style={{
           marginTop: "70px",
           maxWidth: "1050px",
@@ -117,104 +158,44 @@ const HomePageOurServices = () => {
           textAlign: "center",
         }}
       >
-        {/* Stat 1 */}
         <div>
-          <h2
-            style={{
-              fontSize: "clamp(34px, 5vw, 64px)",
-              color: "#ee8679",
-              marginBottom: "8px",
-              fontWeight: "700",
-              lineHeight: "1",
-            }}
-          >
-            500+
-          </h2>
-
-          <p
-            style={{
-              color: "#5b6778",
-              fontSize: "clamp(15px, 2vw, 17px)",
-            }}
-          >
-            Placements completed
-          </p>
+          <h2 style={statStyle}>{count1}+</h2>
+          <p style={textStyle}>Placements completed</p>
         </div>
 
-        {/* Stat 2 */}
         <div>
-          <h2
-            style={{
-              fontSize: "clamp(34px, 5vw, 64px)",
-              color: "#ee8679",
-              marginBottom: "8px",
-              fontWeight: "700",
-              lineHeight: "1",
-            }}
-          >
-            120+
-          </h2>
-
-          <p
-            style={{
-              color: "#5b6778",
-              fontSize: "clamp(15px, 2vw, 17px)",
-            }}
-          >
-            Enterprise clients
-          </p>
+          <h2 style={statStyle}>{count2}+</h2>
+          <p style={textStyle}>Enterprise clients</p>
         </div>
 
-        {/* Stat 3 */}
+    
         <div>
-          <h2
-            style={{
-              fontSize: "clamp(34px, 5vw, 64px)",
-              color: "#ee8679",
-              marginBottom: "8px",
-              fontWeight: "700",
-              lineHeight: "1",
-            }}
-          >
-            300+
-          </h2>
-
-          <p
-            style={{
-              color: "#5b6778",
-              fontSize: "clamp(15px, 2vw, 17px)",
-            }}
-          >
-            Projects delivered
-          </p>
+          <h2 style={statStyle}>{count3}+</h2>
+          <p style={textStyle}>Projects delivered</p>
         </div>
 
-        {/* Stat 4 */}
+       
         <div>
-          <h2
-            style={{
-              fontSize: "clamp(34px, 5vw, 64px)",
-              color: "#ee8679",
-              marginBottom: "8px",
-              fontWeight: "700",
-              lineHeight: "1",
-            }}
-          >
-            10+
-          </h2>
-
-          <p
-            style={{
-              color: "#5b6778",
-              fontSize: "clamp(15px, 2vw, 17px)",
-            }}
-          >
-            Years of expertise
-          </p>
+          <h2 style={statStyle}>{count4}+</h2>
+          <p style={textStyle}>Years of expertise</p>
         </div>
       </div>
     </section>
   );
+};
+
+
+const statStyle = {
+  fontSize: "clamp(34px, 5vw, 64px)",
+  color: "#ee8679",
+  marginBottom: "8px",
+  fontWeight: "700",
+  lineHeight: "1",
+};
+
+const textStyle = {
+  color: "#5b6778",
+  fontSize: "clamp(15px, 2vw, 17px)",
 };
 
 export default HomePageOurServices;
