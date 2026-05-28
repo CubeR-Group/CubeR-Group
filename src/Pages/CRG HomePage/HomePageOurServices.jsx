@@ -1,35 +1,12 @@
 import ServiceCard from "../../components/ServiceCard";
-import { useEffect, useState, useRef } from "react";
-
-const useCountOnView = (target, trigger) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!trigger) return;
-
-    let start = 0;
-    const duration = 1500;
-    const increment = target / (duration / 16);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [trigger, target]);
-
-  return count;
-};
-
+import { useRef } from "react";
+import atlassian from "../../assets/Our_Partners_logo/atlassian.png";
+import slack from "../../assets/Our_Partners_logo/slack.png";
+import dropbox from "../../assets/Our_Partners_logo/dropbox.png";
+import shopify from "../../assets/Our_Partners_logo/shopify.png";
+import google from "../../assets/Our_Partners_logo/google.png";
 const HomePageOurServices = () => {
   const statsRef = useRef(null);
-  const [startCount, setStartCount] = useState(false);
 
   const services = [
     {
@@ -51,24 +28,6 @@ const HomePageOurServices = () => {
         "Enterprise-grade communication platforms with rock-solid reliability and global reach.",
     },
   ];
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStartCount(true);
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (statsRef.current) observer.observe(statsRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-  const count1 = useCountOnView(500, startCount);
-  const count2 = useCountOnView(120, startCount);
-  const count3 = useCountOnView(300, startCount);
-  const count4 = useCountOnView(10, startCount);
 
   return (
     <section
@@ -124,6 +83,7 @@ const HomePageOurServices = () => {
           — not harder.
         </p>
       </div>
+
       <div
         style={{
           display: "grid",
@@ -141,8 +101,10 @@ const HomePageOurServices = () => {
           />
         ))}
       </div>
+
+      {/* 🔥 PARTNERS SECTION (replaced stats) */}
       <div
-        ref={statsRef}  
+        ref={statsRef}
         style={{
           marginTop: "70px",
           maxWidth: "1050px",
@@ -152,50 +114,38 @@ const HomePageOurServices = () => {
           background:
             "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
           gap: "32px",
           alignItems: "center",
           textAlign: "center",
         }}
       >
-        <div>
-          <h2 style={statStyle}>{count1}+</h2>
-          <p style={textStyle}>Placements completed</p>
-        </div>
+        <h3
+          style={{
+            gridColumn: "1 / -1",
+            fontSize: "20px",
+            color: "#0f172a",
+            marginBottom: "10px",
+            fontWeight: "500",
+          }}
+        >
+          Our Partners
+        </h3>
 
-        <div>
-          <h2 style={statStyle}>{count2}+</h2>
-          <p style={textStyle}>Enterprise clients</p>
-        </div>
-
-    
-        <div>
-          <h2 style={statStyle}>{count3}+</h2>
-          <p style={textStyle}>Projects delivered</p>
-        </div>
-
-       
-        <div>
-          <h2 style={statStyle}>{count4}+</h2>
-          <p style={textStyle}>Years of expertise</p>
-        </div>
+       <img src={atlassian} alt="Atlassian" style={logoStyle} />
+<img src={slack} alt="Slack" style={logoStyle} />
+<img src={dropbox} alt="Dropbox" style={logoStyle} />
+<img src={shopify} alt="Shopify" style={logoStyle} />
+<img src={google} alt="Google" style={logoStyle} />
       </div>
     </section>
   );
 };
 
-
-const statStyle = {
-  fontSize: "clamp(34px, 5vw, 64px)",
-  color: "#ee8679",
-  marginBottom: "8px",
-  fontWeight: "700",
-  lineHeight: "1",
-};
-
-const textStyle = {
-  color: "#5b6778",
-  fontSize: "clamp(15px, 2vw, 17px)",
+const logoStyle = {
+  maxHeight: "40px",
+  objectFit: "contain",
+  opacity: 0.7,
 };
 
 export default HomePageOurServices;
