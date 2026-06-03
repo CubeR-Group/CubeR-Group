@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 1300px;
   height: 70px;
-  background: transparent;  
+  background: #ffffff;  
   backdrop-filter: blur(8px);
   border-radius: 18px;
   display: flex;

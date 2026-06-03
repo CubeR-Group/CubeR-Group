@@ -3,23 +3,23 @@ const ServiceCard = ({ icon, title, description }) => {
     <div
       style={{
         background: "#f8f8f8",
-        borderRadius: "28px",
-        padding: "clamp(24px, 4vw, 42px)",
-        minHeight: "300px",
+        borderRadius: "24px",
+        padding: "32px",
+        minHeight: "260px",
         transition: "all 0.35s ease",
         cursor: "pointer",
         position: "relative",
         overflow: "hidden",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-10px)";
+        e.currentTarget.style.transform = "translateY(-8px)";
         e.currentTarget.style.background =
           "linear-gradient(135deg, #fff6f2 0%, #f8fff6 100%)";
         e.currentTarget.style.boxShadow =
-          "0 20px 40px rgba(0,0,0,0.08)";
+          "0 15px 30px rgba(0,0,0,0.06)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0px)";
+        e.currentTarget.style.transform = "translateY(0)";
         e.currentTarget.style.background = "#f8f8f8";
         e.currentTarget.style.boxShadow = "none";
       }}
@@ -27,15 +27,15 @@ const ServiceCard = ({ icon, title, description }) => {
       {/* Icon */}
       <div
         style={{
-          width: "clamp(50px, 5vw, 58px)",
-          height: "clamp(50px, 5vw, 58px)",
+          width: "52px",
+          height: "52px",
           background: "#fdebe6",
-          borderRadius: "18px",
+          borderRadius: "16px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginBottom: "28px",
-          fontSize: "clamp(20px, 2vw, 24px)",
+          marginBottom: "24px",
+          fontSize: "22px",
           color: "#f05b43",
         }}
       >
@@ -45,10 +45,10 @@ const ServiceCard = ({ icon, title, description }) => {
       {/* Title */}
       <h2
         style={{
-          fontSize: "clamp(24px, 4vw, 42px)",
+          fontSize: "clamp(22px, 2vw, 28px)",
           color: "#0f172a",
-          marginBottom: "16px",
-          lineHeight: "1.2",
+          marginBottom: "14px",
+          lineHeight: "1.25",
           fontWeight: "600",
         }}
       >
@@ -59,9 +59,9 @@ const ServiceCard = ({ icon, title, description }) => {
       <p
         style={{
           color: "#5b6778",
-          lineHeight: "1.8",
-          fontSize: "clamp(15px, 2vw, 20px)",
-          marginBottom: "34px",
+          lineHeight: "1.7",
+          fontSize: "15px",
+          marginBottom: "28px",
         }}
       >
         {description}
@@ -73,9 +73,9 @@ const ServiceCard = ({ icon, title, description }) => {
           color: "#f05b43",
           fontWeight: "600",
           display: "flex",
-          gap: "8px",
+          gap: "6px",
           alignItems: "center",
-          fontSize: "clamp(15px, 2vw, 18px)",
+          fontSize: "14px",
         }}
       >
         <span>Learn more</span>

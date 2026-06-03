@@ -9,9 +9,12 @@ const FeatureCard = ({ item, isMobile }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.2,
+      }
     );
 
     if (cardRef.current) {
@@ -33,26 +36,27 @@ const FeatureCard = ({ item, isMobile }) => {
           : item.reverse
           ? "row-reverse"
           : "row",
-        gap: "50px",
+        gap: isMobile ? "24px" : "40px",
         background: "#ffffff",
-        padding: isMobile ? "35px 25px" : "50px",
-        borderRadius: "30px",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+        padding: isMobile ? "24px" : "36px",
+        borderRadius: "22px",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
         overflow: "hidden",
       }}
     >
-  
+      {/* Image */}
       <div
         style={{
           flex: 1,
-          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
           opacity: visible ? 1 : 0,
           transform: visible
             ? "translateX(0)"
             : item.reverse
-            ? "translateX(100px)"
-            : "translateX(-100px)",
-          transition: "all 1s ease",
+            ? "translateX(80px)"
+            : "translateX(-80px)",
+          transition: "all 0.9s ease",
         }}
       >
         <img
@@ -60,12 +64,13 @@ const FeatureCard = ({ item, isMobile }) => {
           alt={item.title}
           style={{
             width: "100%",
-            maxWidth: isMobile ? "180px" : "260px",
+            maxWidth: isMobile ? "140px" : "220px",
             objectFit: "contain",
           }}
         />
       </div>
 
+      {/* Content */}
       <div
         style={{
           flex: 1,
@@ -74,10 +79,11 @@ const FeatureCard = ({ item, isMobile }) => {
       >
         <h2
           style={{
-            fontSize: "clamp(28px, 4vw, 48px)",
+            fontSize: "32px",
             color: "#0b1c39",
-            marginBottom: "20px",
-            fontWeight: "500",
+            marginBottom: "14px",
+            fontWeight: "600",
+            lineHeight: "1.2",
           }}
         >
           {item.title}
@@ -85,9 +91,10 @@ const FeatureCard = ({ item, isMobile }) => {
 
         <p
           style={{
-            fontSize: "clamp(18px, 2vw, 24px)",
-            lineHeight: "1.6",
+            fontSize: "18px",
+            lineHeight: "1.7",
             color: "#5b677a",
+            margin: 0,
           }}
         >
           {item.description}
@@ -141,37 +148,40 @@ const HomePageWhyCubeR = () => {
     <section
       style={{
         background: "#f6f3ed",
-        padding: "100px 6%",
+        padding: isMobile ? "70px 5%" : "100px 6%",
       }}
     >
       {/* Heading */}
       <div
         style={{
           textAlign: "center",
-          marginBottom: "80px",
+          marginBottom: isMobile ? "50px" : "70px",
         }}
       >
         <p
           style={{
             color: "#ff5a47",
-            letterSpacing: "4px",
-            fontSize: "18px",
-            marginBottom: "20px",
+            letterSpacing: "3px",
+            fontSize: "32px",
+            marginBottom: "16px",
             fontWeight: "600",
+            textTransform: "uppercase",
           }}
         >
-          WHY CUBE R?
+          Why Cube R?
         </p>
 
         <h1
           style={{
-            fontSize: "clamp(36px, 6vw, 64px)",
+            fontSize: "32px",
             lineHeight: "1.2",
             color: "#0b1c39",
             fontWeight: "500",
+            margin: 0,
           }}
         >
-          Senior expertise. Structured delivery.
+          Senior expertise.
+          Structured delivery.
           <br />
           Zero handoffs.
         </h1>
@@ -182,7 +192,9 @@ const HomePageWhyCubeR = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "50px",
+          gap: "32px",
+          maxWidth: "1200px",
+          margin: "0 auto",
         }}
       >
         {features.map((item, index) => (
