@@ -1,10 +1,12 @@
 import ServiceCard from "../../components/ServiceCard";
 import { useRef } from "react";
+
 import atlassian from "../../assets/Our_Partners_logo/atlassian.png";
 import slack from "../../assets/Our_Partners_logo/slack.png";
 import dropbox from "../../assets/Our_Partners_logo/dropbox.png";
 import shopify from "../../assets/Our_Partners_logo/shopify.png";
 import google from "../../assets/Our_Partners_logo/google.png";
+
 const HomePageOurServices = () => {
   const statsRef = useRef(null);
 
@@ -37,6 +39,7 @@ const HomePageOurServices = () => {
           "linear-gradient(90deg, #f4e6de 0%, #f7f4ec 50%, #eef2e7 100%)",
       }}
     >
+      {/* Heading */}
       <div
         style={{
           textAlign: "center",
@@ -50,7 +53,7 @@ const HomePageOurServices = () => {
             letterSpacing: "4px",
             textTransform: "uppercase",
             marginBottom: "16px",
-            fontSize: "clamp(14px, 2vw, 18px)",
+            fontSize: "32px",
             fontWeight: "500",
           }}
         >
@@ -59,10 +62,11 @@ const HomePageOurServices = () => {
 
         <h1
           style={{
-            fontSize: "clamp(34px, 7vw, 74px)",
+            fontSize: "32px",
             color: "#0f172a",
             marginBottom: "22px",
             fontWeight: "500",
+            textTransform: "uppercase",
             lineHeight: "1.1",
             letterSpacing: "-2px",
           }}
@@ -72,7 +76,7 @@ const HomePageOurServices = () => {
 
         <p
           style={{
-            fontSize: "clamp(15px, 2vw, 24px)",
+            fontSize: "18px",
             color: "#5b6778",
             lineHeight: "1.7",
             maxWidth: "850px",
@@ -84,6 +88,7 @@ const HomePageOurServices = () => {
         </p>
       </div>
 
+      {/* Services Grid */}
       <div
         style={{
           display: "grid",
@@ -102,50 +107,77 @@ const HomePageOurServices = () => {
         ))}
       </div>
 
-      {/* 🔥 PARTNERS SECTION (replaced stats) */}
-      <div
-        ref={statsRef}
-        style={{
-          marginTop: "70px",
-          maxWidth: "1050px",
-          marginInline: "auto",
-          borderRadius: "28px",
-          padding: "40px 28px",
-          background:
-            "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-          gap: "32px",
-          alignItems: "center",
-          textAlign: "center",
-        }}
-      >
-        <h3
-          style={{
-            gridColumn: "1 / -1",
-            fontSize: "20px",
-            color: "#0f172a",
-            marginBottom: "10px",
-            fontWeight: "500",
-          }}
-        >
-          Our Partners
-        </h3>
+{/* Partners Section */}
+<div
+  ref={statsRef}
+  style={{
+    marginTop: "60px",
+    maxWidth: "1400px",
+    marginInline: "auto",
+    borderRadius: "24px",
+    padding: "40px 50px",
+    background:
+      "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
+  }}
+>
+  <h3
+    style={{
+      textAlign: "center",
+      fontSize: "clamp(16px, 2vw, 22px)",
+      color: "#0f172a",
+      marginBottom: "32px",
+      fontWeight: "500",
+    }}
+  >
+    Our Partners
+  </h3>
 
-       <img src={atlassian} alt="Atlassian" style={logoStyle} />
-<img src={slack} alt="Slack" style={logoStyle} />
-<img src={dropbox} alt="Dropbox" style={logoStyle} />
-<img src={shopify} alt="Shopify" style={logoStyle} />
-<img src={google} alt="Google" style={logoStyle} />
-      </div>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      gap: "32px",
+    }}
+  >
+    <div style={logoContainerStyle}>
+      <img src={atlassian} alt="Atlassian" style={logoStyle} />
+    </div>
+
+    <div style={logoContainerStyle}>
+      <img src={slack} alt="Slack" style={logoStyle} />
+    </div>
+
+    <div style={logoContainerStyle}>
+      <img src={dropbox} alt="Dropbox" style={logoStyle} />
+    </div>
+
+    <div style={logoContainerStyle}>
+      <img src={shopify} alt="Shopify" style={logoStyle} />
+    </div>
+
+    <div style={logoContainerStyle}>
+      <img src={google} alt="Google" style={logoStyle} />
+    </div>
+  </div>
+</div>
     </section>
   );
 };
 
+const logoContainerStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
 const logoStyle = {
-  maxHeight: "40px",
+  height: "50px",
+  maxWidth: "250px",
+  width: "auto",
   objectFit: "contain",
-  opacity: 0.7,
+  opacity: 0.75,
+  transition: "all 0.3s ease",
 };
 
 export default HomePageOurServices;
