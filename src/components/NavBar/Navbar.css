@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 1300px;
   height: 70px;
-  background: #ffffff;  
+  background: #ffffff;
   backdrop-filter: blur(8px);
   border-radius: 18px;
   display: flex;
@@ -49,7 +49,21 @@
   position: relative;
 }
 
-.nav-links li.active::after {
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.nav-links a:visited {
+  color: inherit;
+}
+
+.nav-links a.active {
+  position: relative;
+}
+
+.nav-links a.active::after {
   content: "";
   position: absolute;
   bottom: -8px;
@@ -58,6 +72,7 @@
   height: 2px;
   background: #f04e3e;
 }
+
 .call-btn {
   background: #f04e3e;
   color: white;
@@ -66,6 +81,7 @@
   border-radius: 12px;
   cursor: pointer;
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -79,18 +95,20 @@
   background: black;
   transition: 0.3s;
 }
+
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
 @media (max-width: 900px) {
-  
   .nav-links {
     position: absolute;
     top: 80px;
@@ -110,7 +128,7 @@
   }
 
   .nav-cta {
-    display: none; 
+    display: none;
   }
 
   .hamburger {
