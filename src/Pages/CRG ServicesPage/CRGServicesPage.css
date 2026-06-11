@@ -1,0 +1,255 @@
+/* ===========================
+   Hero Section
+=========================== */
+
+.services-hero {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px;
+  overflow: hidden;
+
+  background: transparent;
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.services-hero-content h1 {
+  margin: 0;
+
+  color: #f26a5b;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+/* ===========================
+   Paragraph
+=========================== */
+
+.services-hero-content p {
+  max-width: 800px;
+  margin: 36px auto 0;
+
+  color: #5d6b80;
+  font-size: 18px;
+  line-height: 1.6;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* ===========================
+   Button
+=========================== */
+
+.hero-btn {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  background: #f15a4a;
+  color: #fff;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 18px 38px;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.hero-btn:hover {
+  background: #ff7a68;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(255, 122, 104, 0.25);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 1024px) {
+  .services-hero-content h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    min-height: auto;
+    padding: 100px 20px;
+  }
+
+  .services-hero-content h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .services-hero-content p {
+    font-size: 17px;
+    margin-top: 28px;
+  }
+
+  .hero-btn {
+    margin-top: 30px;
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .services-hero-content p {
+    font-size: 16px;
+  }
+}
+
+/* ===========================
+   WHO WE SERVE SECTION
+=========================== */
+
+.who-we-serve {
+  padding: 10px 20px 120px;
+  text-align: center;
+}
+
+.section-label {
+  color: #f26a5b;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: #16243b;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.section-description {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #5d6b80;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.section-description.second {
+  margin-top: 18px;
+}
+
+.serve-grid {
+  max-width: 1200px;
+  margin: 60px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ===========================
+   CARD OVERRIDES
+=========================== */
+
+.serve-grid > div {
+  background: #f8f8f8 !important;
+  min-height: 180px !important;
+  border-radius: 18px !important;
+  text-align: left;
+}
+
+.serve-grid h2 {
+  font-size: 28px !important;
+  margin-bottom: 12px !important;
+}
+
+.serve-grid p {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hide Learn More for this section */
+
+.serve-grid > div div:last-child {
+  display: none !important;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 44px;
+  }
+
+  .serve-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .who-we-serve {
+    padding: 60px 20px 100px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .section-description {
+    font-size: 16px;
+  }
+
+  .serve-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
