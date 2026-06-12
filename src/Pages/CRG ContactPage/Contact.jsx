@@ -1,9 +1,11 @@
-import React from 'react';
+import Top from './Top';
+import Bottom from './Bottom';
+
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <p>This is the contact page.</p>
+    <div style={{ paddingTop: "80px" }}>
+      <Top />
+      <Bottom />
     </div>
   );
 };
