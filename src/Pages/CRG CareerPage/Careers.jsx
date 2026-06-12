@@ -1,9 +1,13 @@
-import React from 'react'
+import CareerHero from "./CareerHero";
+import WhyJoinSection from "./WhyJoinSection";
+import OpenRolesSection from "./OpenRolesSection";
 
-const Careers = () => {
+export default function Career() {
   return (
-    <div><h1>Careers</h1><p>This is the careers page.</p></div>
-  )
+    <>
+      <CareerHero />
+      <WhyJoinSection />
+      <OpenRolesSection />
+    </>
+  );
 }
-
-export default Careers
