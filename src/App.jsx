@@ -7,11 +7,12 @@ import CRGServicesPage from "./Pages/CRG ServicesPage/CRGServicesPage";
 
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-
+import "./App.css";
 function App() {
   return (
     <Router>
       <div className="page-bg">
+<<<<<<< HEAD
         <Navbar />
 
         <Routes>
@@ -32,6 +33,20 @@ function App() {
         </Routes>
 
         <Footer />
+=======
+        <div className="page-content">
+          <Navbar />
+
+          <Routes>
+            <Route
+              path="/"
+              element={<CRGHomePage />}
+            />
+          </Routes>
+
+          <Footer />
+        </div>
+>>>>>>> c505ab4 (bg)
       </div>
     </Router>
   );

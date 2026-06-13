@@ -80,7 +80,7 @@ const HomePageLeadership = () => {
                 </div>
               </div>
             </article>
-          ))}   
+          ))}     
         </div>
 
         <div className="leadership-cta">
