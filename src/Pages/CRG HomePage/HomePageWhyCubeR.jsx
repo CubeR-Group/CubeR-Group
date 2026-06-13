@@ -80,9 +80,9 @@ const FeatureCard = ({ item, isMobile }) => {
         <h2
           style={{
             fontSize: "32px",
-            color: "#0b1c39",
+            color: "#132436",
             marginBottom: "14px",
-            fontWeight: "600",
+            fontFamily: "Manrope",
             lineHeight: "1.2",
           }}
         >
@@ -93,8 +93,9 @@ const FeatureCard = ({ item, isMobile }) => {
           style={{
             fontSize: "18px",
             lineHeight: "1.7",
-            color: "#5b677a",
+            color: "#47596B",
             margin: 0,
+            fontFamily: "InterRegular",
           }}
         >
           {item.description}
@@ -160,11 +161,11 @@ const HomePageWhyCubeR = () => {
       >
         <p
           style={{
-            color: "#ff5a47",
+            color: "#EF4E3C",
             letterSpacing: "3px",
-            fontSize: "32px",
+            fontSize: "clamp(24px, 5vw, 32px)",
             marginBottom: "16px",
-            fontWeight: "600",
+            fontFamily: "InterMedium",
             textTransform: "uppercase",
           }}
         >
@@ -173,10 +174,10 @@ const HomePageWhyCubeR = () => {
 
         <h1
           style={{
-            fontSize: "32px",
+            fontSize: "clamp(32px, 5vw, 48px)",
             lineHeight: "1.2",
-            color: "#0b1c39",
-            fontWeight: "500",
+            color: "#132436",
+            fontFamily: "Manrope",
             margin: 0,
           }}
         >

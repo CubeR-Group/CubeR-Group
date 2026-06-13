@@ -49,12 +49,12 @@ const HomePageOurServices = () => {
       >
         <p
           style={{
-            color: "#f05b43",
+            color: "#EF4E3C",
             letterSpacing: "4px",
             textTransform: "uppercase",
             marginBottom: "16px",
             fontSize: "clamp(24px, 5vw, 32px)",
-            fontWeight: "500",
+            fontFamily: "InterMedium",
           }}
         >
           Our Services
@@ -63,7 +63,7 @@ const HomePageOurServices = () => {
         <h1
           style={{
             fontSize: "clamp(32px, 5vw, 48px)",
-            fontWeight: "500",
+            fontFamily: "Manrope",
             lineHeight: "1.2",
             letterSpacing: "-2px",
           }}
@@ -78,6 +78,7 @@ const HomePageOurServices = () => {
             lineHeight: "1.7",
             maxWidth: "850px",
             margin: "0 auto",
+            fontFamily: "InterRegular",
           }}
         >
           We design, build, and deliver technology that helps you work smarter —
