@@ -1,11 +1,11 @@
 import ServiceCard from "../../components/ServiceCard";
 import { useRef } from "react";
 
-import atlassian from "../../assets/Our_Partners_logo/atlassian.png";
-import slack from "../../assets/Our_Partners_logo/slack.png";
-import dropbox from "../../assets/Our_Partners_logo/dropbox.png";
-import shopify from "../../assets/Our_Partners_logo/shopify.png";
-import google from "../../assets/Our_Partners_logo/google.png";
+import buildHive from "../../assets/Our_Partners_logo/BuildHive_2.png";
+import corpus from "../../assets/Our_Partners_logo/Corpus_Logo_page-0001.jpg";
+import lipi from "../../assets/Our_Partners_logo/LIPI Logo.jpg";
+import logo from "../../assets/Our_Partners_logo/LOGO.jpg";
+import manuh from "../../assets/Our_Partners_logo/Manuh Technologies Logo.png";
 
 const HomePageOurServices = () => {
   const statsRef = useRef(null);
@@ -80,20 +80,20 @@ const HomePageOurServices = () => {
             margin: "0 auto",
           }}
         >
-          We design, build, and deliver technology that helps you work smarter
-          — not harder.
+          We design, build, and deliver technology that helps you work smarter —
+          not harder.
         </p>
       </div>
 
       {/* Services Grid */}
       <div
         style={{
-        maxWidth: "1280px",
-        margin: "0 auto",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        gap: "22px",
-        alignItems: "stretch",
+          maxWidth: "1280px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "22px",
+          alignItems: "stretch",
         }}
       >
         {services.map((service, index) => (
@@ -106,60 +106,60 @@ const HomePageOurServices = () => {
         ))}
       </div>
 
-{/* Partners Section */}
-<div
-  ref={statsRef}
-  style={{
-    marginTop: "60px",
-    maxWidth: "1100px",
-    marginInline: "auto",
-    borderRadius: "24px",
-    padding: "36px 40px",
-    background:
-      "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
-  }}
->
-  <h3
-    style={{
-      textAlign: "center",
-      fontSize: "clamp(16px, 2vw, 22px)",
-      color: "#0f172a",
-      marginBottom: "32px",
-      fontWeight: "500",
-    }}
-  >
-    Our Partners
-  </h3>
+      {/* Partners Section */}
+      <div
+        ref={statsRef}
+        style={{
+          marginTop: "60px",
+          maxWidth: "1100px",
+          marginInline: "auto",
+          borderRadius: "24px",
+          padding: "36px 40px",
+          background:
+            "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
+        }}
+      >
+        <h3
+          style={{
+            textAlign: "center",
+            fontSize: "clamp(16px, 2vw, 22px)",
+            color: "#0f172a",
+            marginBottom: "32px",
+            fontWeight: "500",
+          }}
+        >
+          Our Partners
+        </h3>
 
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-evenly",
-      alignItems: "center",
-      gap: "32px",
-    }}
-  >
-    <div style={logoContainerStyle}>
-      <img src={atlassian} alt="Atlassian" style={logoStyle} />
-    </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
+          <div style={logoContainerStyle}>
+            <img src={buildHive} alt="BuildHive" style={logoStyle} />
+          </div>
 
-    <div style={logoContainerStyle}>
-      <img src={slack} alt="Slack" style={logoStyle} />
-    </div>
+          <div style={logoContainerStyle}>
+            <img src={corpus} alt="Corpus" style={logoStyle} />
+          </div>
 
-    <div style={logoContainerStyle}>
-      <img src={dropbox} alt="Dropbox" style={logoStyle} />
-    </div>
+          <div style={logoContainerStyle}>
+            <img src={lipi} alt="LIPI" style={logoStyle} />
+          </div>
 
-    <div style={logoContainerStyle}>
-      <img src={shopify} alt="Shopify" style={logoStyle} />
-    </div>
+          <div style={logoContainerStyle}>
+            <img src={logo} alt="Logo" style={logoStyle} />
+          </div>
 
-    <div style={logoContainerStyle}>
-      <img src={google} alt="Google" style={logoStyle} />
-    </div>
-  </div>
-</div>
+          <div style={logoContainerStyle}>
+            <img src={manuh} alt="Manuh Technologies" style={logoStyle} />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
