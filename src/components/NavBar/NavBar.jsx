@@ -1,22 +1,26 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/NAV_LOGO/CUBER_LOGO.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false); // 🔥 NEW
 
   return (
     <div className="nav-wrapper">
       <div className="nav-container">
+
+        {/* Logo */}
         <div className="nav-logo">
           <div className="logo-box">
-            <span className="cube">CUBE</span>
-            <span className="r">R</span>
+            <img src={logo} alt="CubeR Logo" className="logo-img" />
           </div>
-          <p className="tagline">Build | Scale | Lead</p>
         </div>
 
+        {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+
           <li>
             <NavLink to="/" onClick={() => setMenuOpen(false)}>
               Home
@@ -29,10 +33,46 @@ const Navbar = () => {
             </NavLink>
           </li>
 
-          <li>
-            <NavLink to="/services" onClick={() => setMenuOpen(false)}>
-              Services <span className="dropdown">⌄</span>
-            </NavLink>
+          {/* 🔥 SERVICES DROPDOWN */}
+          <li className="services-menu">
+
+            <div
+              className="services-label"
+              onClick={() => setServicesOpen(!servicesOpen)}
+            >
+              Services <span className="dropdown">▾</span>
+            </div>
+
+            {servicesOpen && (
+              <ul className="dropdown-menu">
+                <li>
+                  <NavLink
+                    to="/us-it-staffing"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    US IT Staffing
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    to="/software-development"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    Software Development
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    to="/video-conferencing"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    Video Conferencing
+                  </NavLink>
+                </li>
+              </ul>
+            )}
           </li>
 
           <li>
@@ -46,14 +86,17 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
+
         </ul>
 
+        {/* CTA */}
         <div className="nav-cta">
           <button className="call-btn">
             Book a Call <span className="arrow">→</span>
           </button>
         </div>
 
+        {/* Hamburger */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -62,6 +105,7 @@ const Navbar = () => {
           <span></span>
           <span></span>
         </div>
+
       </div>
     </div>
   );

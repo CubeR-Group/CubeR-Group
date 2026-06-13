@@ -1,7 +1,7 @@
-import "./CRGServicesPage.css";
+import "./USITStaffing.css";
 import ServiceCard from "../../components/ServiceCard";
 
-const CRGServicesPage = () => {
+const USITstaffing = () => {
   return (
     <>
       {/* Hero Section */}
@@ -69,4 +69,4 @@ const CRGServicesPage = () => {
   );
 };
 
-export default CRGServicesPage;
+export default USITstaffing;

@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CRGHomePage from "./Pages/CRG HomePage/CRGHomePage";
 import Contact from "./Pages/CRG ContactPage/Contact";
 import Careers from "./Pages/CRG CareerPage/Careers";
-import CRGServicesPage from "./Pages/CRG ServicesPage/CRGServicesPage";
+import USITStaffing from "./Pages/CRG ServicesPage/USITStaffing";
+import SoftwareDevelopment from "./Pages/CRG ServicesPage/SoftwareDevelopment";
+import VideoConferencing from "./Pages/CRG ServicesPage/VideoConferencing";
 
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -12,15 +14,25 @@ function App() {
   return (
     <Router>
       <div className="page-bg">
-        <div className="page-content">
-          <Navbar />
+        <Navbar />
 
-          <Routes>
-            <Route
-              path="/"
-              element={<CRGHomePage />}
-            />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<CRGHomePage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/about"
+            element={
+              <div>
+                <h1>About Us</h1>
+                <p>This is the about page.</p>
+              </div>
+            }
+          />
+          <Route path="/us-it-staffing" element={<USITStaffing />} />
+          <Route path="/software-development" element={<SoftwareDevelopment />} />
+          <Route path="/video-conferencing" element={<VideoConferencing />} />
+          <Route path="/careers" element={<Careers />} />
+        </Routes>
 
           <Footer />
         </div>
