@@ -8,15 +8,13 @@
   max-width: 1300px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr; 
-  column-gap: 80px; 
-}
-.logo-box {
-  font-size: 22px;
-  font-weight: bold;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  column-gap: 80px;
 }
 
 .logo-box {
+  font-size: 22px;
+  font-weight: bold;
   display: flex;
   align-items: center;
 }
@@ -31,17 +29,22 @@
   line-height: 1.7;
   max-width: 280px;
 }
+
+/* 🔥 FIXED FOR ROUTING */
 .footer-link {
-  margin-bottom: 18px;   
+  display: block;              /* 🔥 prevents collapsing */
+  margin-bottom: 18px;
   color: #444;
   cursor: pointer;
+  text-decoration: none;       /* 🔥 removes link underline */
 }
 
 .footer-link:hover {
   color: #f04e3e;
 }
+
 .contact-item {
-  margin-bottom: 18px; 
+  margin-bottom: 18px;
   color: #444;
   line-height: 1.6;
 }
@@ -64,6 +67,13 @@
   font-size: 16px;
   font-weight: 600;
 }
+
+/* OPTIONAL (clean stacking) */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: 1fr;

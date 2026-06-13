@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import ScrollToTop from "./components/ScrollToTop";
 import CRGHomePage from "./Pages/CRG HomePage/CRGHomePage";
 import Contact from "./Pages/CRG ContactPage/Contact";
 import Careers from "./Pages/CRG CareerPage/Careers";
@@ -13,6 +13,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
+       <ScrollToTop /> 
       <div className="page-bg">
         <Navbar />
 
