@@ -37,7 +37,7 @@ const FeatureCard = ({ item, isMobile }) => {
           ? "row-reverse"
           : "row",
         gap: isMobile ? "24px" : "40px",
-        background: "#ffffff",
+        background: "transparent",
         padding: isMobile ? "24px" : "36px",
         borderRadius: "22px",
         boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
@@ -147,7 +147,7 @@ const HomePageWhyCubeR = () => {
   return (
     <section
       style={{
-        background: "#f6f3ed",
+        background: "linear-gradient(90deg, #f4e6de 0%, #f7f4ec 50%, #eef2e7 100%)",
         padding: isMobile ? "70px 5%" : "100px 6%",
       }}
     >
