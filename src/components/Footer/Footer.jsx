@@ -1,14 +1,18 @@
 import "./Footer.css";
+import { LuTwitter } from "react-icons/lu";
+import { LuLinkedin } from "react-icons/lu";
+import logo from "../../assets/NAV_LOGO/CUBER_LOGO.svg";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-container">
         <div className="footer-col logo-col">
-          <div className="logo-box">
-            <span className="cube">CUBE</span>
-            <span className="r">R</span>
-          </div>
+            <div className="nav-logo">
+                      <div className="logo-box">
+                        <img src={logo} alt="CubeR Logo" className="logo-img" />
+                      </div>
+              </div>
 
           <p className="footer-text">
             Premium IT staffing, software engineering, and enterprise
@@ -22,17 +26,19 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="icon-circle"
           >
-          in
+          <LuLinkedin />
           </a>
-
+            
           <a
            href="https://twitter.com/YOUR_PROFILE"
            target="_blank"
            rel="noopener noreferrer"
            className="icon-circle"
           >
-          tw
+          <LuTwitter />
           </a>
+
+
         </div>
         </div>
         <div className="footer-col">
