@@ -10,25 +10,29 @@ import stark from "../../assets/Our_Partners_logo/STARK Holdings logo.png";
 import tequarian from "../../assets/Our_Partners_logo/Tequarian Logo.png";
 import tmm from "../../assets/Our_Partners_logo/TMM logo 1-DKrSBkyD.png";
 import yahoom from "../../assets/Our_Partners_logo/YAHOOM Logo.png";
+import { IoCodeSlashOutline } from "react-icons/io5";
+import { LuVideo } from "react-icons/lu";
+import { RxPeople } from "react-icons/rx";
+
 
 const HomePageOurServices = () => {
   const statsRef = useRef(null);
 
   const services = [
     {
-      icon: "👥",
+      icon: <RxPeople />,
       title: "US IT Staffing",
       description:
         "Source, vet, and place elite IT talent across contract, contract-to-hire, and direct placement.",
     },
     {
-      icon: "</>",
+      icon: <IoCodeSlashOutline />,
       title: "Software Development",
       description:
         "Custom web and mobile applications engineered for performance, scale, and long-term maintainability.",
     },
     {
-      icon: "🎥",
+      icon: <LuVideo />,
       title: "Video Conferencing Solutions",
       description:
         "Enterprise-grade communication platforms with rock-solid reliability and global reach.",
