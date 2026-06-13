@@ -4,8 +4,8 @@ const ServiceCard = ({ icon, title, description }) => {
       style={{
         background: "#f8f8f8",
         borderRadius: "24px",
-        padding: "32px",
-        minHeight: "260px",
+        padding: "28px",
+        minHeight: "240px",
         transition: "all 0.35s ease",
         cursor: "pointer",
         position: "relative",
@@ -24,50 +24,47 @@ const ServiceCard = ({ icon, title, description }) => {
         e.currentTarget.style.boxShadow = "none";
       }}
     >
-      {/* Icon */}
       <div
         style={{
-          width: "52px",
-          height: "52px",
+          width: "44px",
+          height: "44px",
           background: "#fdebe6",
-          borderRadius: "16px",
+          borderRadius: "12px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           marginBottom: "24px",
-          fontSize: "22px",
+          fontSize: "18px",
           color: "#f05b43",
         }}
       >
         {icon}
       </div>
 
-      {/* Title */}
       <h2
         style={{
-          fontSize: "clamp(22px, 2vw, 28px)",
+          fontSize: "20px",
           color: "#0f172a",
-          marginBottom: "14px",
-          lineHeight: "1.25",
+          marginBottom: "12px",
+          lineHeight: "1.3",
           fontWeight: "600",
         }}
       >
         {title}
       </h2>
 
-      {/* Description */}
       <p
         style={{
           color: "#5b6778",
-          lineHeight: "1.7",
+          lineHeight: "1.8",
           fontSize: "15px",
-          marginBottom: "28px",
+          marginBottom: "30px",
+          maxWidth: "280px",
         }}
       >
         {description}
       </p>
 
-      {/* Learn More */}
       <div
         style={{
           color: "#f05b43",

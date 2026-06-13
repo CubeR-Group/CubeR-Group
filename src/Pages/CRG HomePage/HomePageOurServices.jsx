@@ -53,7 +53,7 @@ const HomePageOurServices = () => {
             letterSpacing: "4px",
             textTransform: "uppercase",
             marginBottom: "16px",
-            fontSize: "32px",
+            fontSize: "clamp(24px, 5vw, 32px)",
             fontWeight: "500",
           }}
         >
@@ -62,12 +62,9 @@ const HomePageOurServices = () => {
 
         <h1
           style={{
-            fontSize: "32px",
-            color: "#0f172a",
-            marginBottom: "22px",
+            fontSize: "clamp(32px, 5vw, 48px)",
             fontWeight: "500",
-            textTransform: "uppercase",
-            lineHeight: "1.1",
+            lineHeight: "1.2",
             letterSpacing: "-2px",
           }}
         >
@@ -91,10 +88,12 @@ const HomePageOurServices = () => {
       {/* Services Grid */}
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "24px",
-          alignItems: "stretch",
+        maxWidth: "1280px",
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: "22px",
+        alignItems: "stretch",
         }}
       >
         {services.map((service, index) => (
@@ -112,10 +111,10 @@ const HomePageOurServices = () => {
   ref={statsRef}
   style={{
     marginTop: "60px",
-    maxWidth: "1400px",
+    maxWidth: "1100px",
     marginInline: "auto",
     borderRadius: "24px",
-    padding: "40px 50px",
+    padding: "36px 40px",
     background:
       "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
   }}
@@ -166,15 +165,16 @@ const HomePageOurServices = () => {
 };
 
 const logoContainerStyle = {
+  flex: 1,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
 };
 
 const logoStyle = {
-  height: "50px",
-  maxWidth: "250px",
-  width: "auto",
+  height: "42px",
+  maxWidth: "160px",
+  width: "100%",
   objectFit: "contain",
   opacity: 0.75,
   transition: "all 0.3s ease",
