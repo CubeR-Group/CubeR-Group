@@ -9,7 +9,7 @@ import VideoConferencing from "./Pages/CRG ServicesPage/VideoConferencing";
 
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-
+import "./App.css";
 function App() {
   return (
     <Router>
@@ -34,7 +34,8 @@ function App() {
           <Route path="/careers" element={<Careers />} />
         </Routes>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </Router>
   );

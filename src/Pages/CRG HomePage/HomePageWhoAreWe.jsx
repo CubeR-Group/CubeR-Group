@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./WhoWeAre.css";
 
-/* 🔥 Counter now depends on trigger */
 const Counter = ({ target, suffix = "", start }) => {
   const [count, setCount] = useState(0);
 
@@ -43,7 +42,6 @@ const HomePageWhoAreWe = () => {
     setTimeout(() => setShow(true), 200);
   }, []);
 
-  /* 🔥 ONE scroll observer */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -78,7 +76,6 @@ const HomePageWhoAreWe = () => {
           development, and enterprise communications.
         </p>
 
-        {/* 🔥 attach ref here */}
         <div className="stats" ref={statsRef}>
 
           <div className="stat">

@@ -3,12 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face { font-family: 'InterRegular'; src: url('./assets/fonts/inter_regular.ttf'); }
+
+@font-face { font-family: 'InterMedium'; src: url('./assets/fonts/inter.24pt-medium.ttf'); }
+
+@font-face { font-family: 'Manrope'; src: url('./assets/fonts/Manrope-Medium.ttf'); }
 
 body {
   width: 100%;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
 
+  font-family: 'InterRegular', sans-serif;
+}
+#root {
+  width: 100%;
+}
+.page-bg {
   min-height: 100vh;
 
   background: #f4f1ea;
