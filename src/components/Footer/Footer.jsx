@@ -16,9 +16,24 @@ const Footer = () => {
           </p>
 
           <div className="social-icons">
-            <div className="icon-circle">in</div>
-            <div className="icon-circle">tw</div>
-          </div>
+           <a
+            href="https://www.linkedin.com/company/cubergroup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-circle"
+          >
+          in
+          </a>
+
+          <a
+           href="https://twitter.com/YOUR_PROFILE"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="icon-circle"
+          >
+          tw
+          </a>
+        </div>
         </div>
         <div className="footer-col">
           <p className="footer-link">About</p>
