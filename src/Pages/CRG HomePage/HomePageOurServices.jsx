@@ -6,6 +6,10 @@ import corpus from "../../assets/Our_Partners_logo/Corpus_Logo_page-0001.jpg";
 import lipi from "../../assets/Our_Partners_logo/LIPI Logo.jpg";
 import logo from "../../assets/Our_Partners_logo/LOGO.jpg";
 import manuh from "../../assets/Our_Partners_logo/Manuh Technologies Logo.png";
+import stark from "../../assets/Our_Partners_logo/STARK Holdings logo.png";
+import tequarian from "../../assets/Our_Partners_logo/Tequarian Logo.png";
+import tmm from "../../assets/Our_Partners_logo/TMM logo 1-DKrSBkyD.png";
+import yahoom from "../../assets/Our_Partners_logo/YAHOOM Logo.png";
 
 const HomePageOurServices = () => {
   const statsRef = useRef(null);
@@ -29,6 +33,17 @@ const HomePageOurServices = () => {
       description:
         "Enterprise-grade communication platforms with rock-solid reliability and global reach.",
     },
+  ];
+  const partners = [
+    { src: buildHive, alt: "BuildHive" },
+    { src: corpus, alt: "Corpus" },
+    { src: lipi, alt: "LIPI" },
+    { src: logo, alt: "Logo" },
+    { src: manuh, alt: "Manuh Technologies" },
+    { src: stark, alt: "STARK Holdings" },
+    { src: tequarian, alt: "Tequarian" },
+    { src: tmm, alt: "TMM" },
+    { src: yahoom, alt: "YAHOOM" },
   ];
 
   return (
@@ -110,19 +125,19 @@ const HomePageOurServices = () => {
       <div
         ref={statsRef}
         style={{
-          marginTop: "60px",
-          maxWidth: "1100px",
+          marginTop: "80px",
+          maxWidth: "1280px",
           marginInline: "auto",
           borderRadius: "24px",
-          padding: "36px 40px",
+          padding: "60px 70px",
           background:
-            "linear-gradient(90deg, #f8f8f8 0%, #f8f8f8 70%, #fdebe6 100%)",
+            "linear-gradient(90deg, #f8f8f8 20%, #f8f8f8 100%, #fdebe6 100%)",
         }}
       >
         <h3
           style={{
             textAlign: "center",
-            fontSize: "clamp(16px, 2vw, 22px)",
+            fontSize: "clamp(28px, 4vw, 40px)",
             color: "#0f172a",
             marginBottom: "32px",
             fontWeight: "500",
@@ -133,30 +148,44 @@ const HomePageOurServices = () => {
 
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            gap: "32px",
+            overflow: "hidden",
+            width: "100%",
           }}
         >
-          <div style={logoContainerStyle}>
-            <img src={buildHive} alt="BuildHive" style={logoStyle} />
-          </div>
+          <style>
+            {`
+    @keyframes scrollPartners {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
-          <div style={logoContainerStyle}>
-            <img src={corpus} alt="Corpus" style={logoStyle} />
-          </div>
+    .partner-scroll {
+      animation: scrollPartners 25s linear infinite;
+    }
 
-          <div style={logoContainerStyle}>
-            <img src={lipi} alt="LIPI" style={logoStyle} />
-          </div>
-
-          <div style={logoContainerStyle}>
-            <img src={logo} alt="Logo" style={logoStyle} />
-          </div>
-
-          <div style={logoContainerStyle}>
-            <img src={manuh} alt="Manuh Technologies" style={logoStyle} />
+    .partner-scroll:hover {
+      animation-play-state: paused;
+    }
+  `}
+          </style>
+          <div
+            className="partner-scroll"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "40px",
+              width: "max-content",
+            }}
+          >
+            {[...partners, ...partners].map((partner, index) => (
+              <div key={index} style={logoContainerStyle}>
+                <img src={partner.src} alt={partner.alt} style={logoStyle} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -165,19 +194,17 @@ const HomePageOurServices = () => {
 };
 
 const logoContainerStyle = {
-  flex: 1,
+  flex: "0 0 180px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
 };
 
 const logoStyle = {
-  height: "42px",
-  maxWidth: "160px",
-  width: "100%",
+  width: "180px",
+  height: "90px",
   objectFit: "contain",
-  opacity: 0.75,
-  transition: "all 0.3s ease",
+  opacity: 0.9,
 };
 
 export default HomePageOurServices;
