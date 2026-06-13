@@ -12,28 +12,6 @@ function App() {
   return (
     <Router>
       <div className="page-bg">
-<<<<<<< HEAD
-        <Navbar />
-
-        <Routes>
-          <Route path="/" element={<CRGHomePage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/about"
-            element={
-              <div>
-                <h1>About Us</h1>
-                <p>This is the about page.</p>
-              </div>
-            }
-          />
-          <Route path="/services" element={<CRGServicesPage />} />
-
-          <Route path="/careers" element={<Careers />} />
-        </Routes>
-
-        <Footer />
-=======
         <div className="page-content">
           <Navbar />
 
@@ -46,7 +24,6 @@ function App() {
 
           <Footer />
         </div>
->>>>>>> c505ab4 (bg)
       </div>
     </Router>
   );
