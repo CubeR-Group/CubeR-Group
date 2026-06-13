@@ -36,10 +36,7 @@ function App() {
 
           <Footer />
         </div>
-<<<<<<< HEAD
-=======
       
->>>>>>> eb2b42e (added exxtra fonts)
     </Router>
   );
 }
