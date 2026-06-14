@@ -1,5 +1,7 @@
 import "./Footer.css";
-import { Link } from "react-router-dom";  // 🔥 added
+import { LuTwitter } from "react-icons/lu";
+import { LuLinkedin } from "react-icons/lu";
+import { Link } from "react-router-dom"; 
 
 const Footer = () => {
   return (
@@ -24,7 +26,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="icon-circle"
             >
-              in
+            <LuLinkedin />
             </a>
 
             <a
@@ -33,19 +35,18 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="icon-circle"
             >
-              tw
+            <LuTwitter />
             </a>
           </div>
         </div>
 
-        {/* COLUMN 2 */}
         <div className="footer-col">
           <Link to="/about" className="footer-link">About</Link>
           <Link to="/careers" className="footer-link">Careers</Link>
           <Link to="/contact" className="footer-link">Contact</Link>
         </div>
 
-        {/* COLUMN 3 */}
+     
         <div className="footer-col">
           <Link to="/us-it-staffing" className="footer-link">US IT Staffing</Link>
           <Link to="/software-development" className="footer-link">Software Development</Link>
