@@ -1,15 +1,15 @@
 import ServiceCard from "../../components/ServiceCard";
 import { useRef } from "react";
 
-import buildHive from "../../assets/Our_Partners_logo/BuildHive_2.png";
-import corpus from "../../assets/Our_Partners_logo/Corpus_Logo_page-0001.jpg";
-import lipi from "../../assets/Our_Partners_logo/LIPI Logo.jpg";
-import logo from "../../assets/Our_Partners_logo/LOGO.jpg";
-import manuh from "../../assets/Our_Partners_logo/Manuh Technologies Logo.png";
-import stark from "../../assets/Our_Partners_logo/STARK Holdings logo.png";
-import tequarian from "../../assets/Our_Partners_logo/Tequarian Logo.png";
-import tmm from "../../assets/Our_Partners_logo/TMM logo 1-DKrSBkyD.png";
-import yahoom from "../../assets/Our_Partners_logo/YAHOOM Logo.png";
+import buildHive from "../../assets/Our_Partners_logo/8.png";
+import corpus from "../../assets/Our_Partners_logo/9.png";
+import pl from "../../assets/Our_Partners_logo/5.png";
+import logo from "../../assets/Our_Partners_logo/11.png";
+import manuh from "../../assets/Our_Partners_logo/6.png";
+import stark from "../../assets/Our_Partners_logo/4.png";
+import tequarian from "../../assets/Our_Partners_logo/7.png";
+import tmm from "../../assets/Our_Partners_logo/10.png";
+import yahoom from "../../assets/Our_Partners_logo/3.png";
 import { IoCodeSlashOutline } from "react-icons/io5";
 import { LuVideo } from "react-icons/lu";
 import { RxPeople } from "react-icons/rx";
@@ -41,7 +41,7 @@ const HomePageOurServices = () => {
   const partners = [
     { src: buildHive, alt: "BuildHive" },
     { src: corpus, alt: "Corpus" },
-    { src: lipi, alt: "LIPI" },
+    { src: pl, alt: "LIPI" },
     { src: logo, alt: "Logo" },
     { src: manuh, alt: "Manuh Technologies" },
     { src: stark, alt: "STARK Holdings" },
@@ -206,8 +206,8 @@ const logoContainerStyle = {
 };
 
 const logoStyle = {
-  width: "180px",
-  height: "90px",
+  width: "250px",
+  height: "100px",
   objectFit: "contain",
   opacity: 0.9,
 };
