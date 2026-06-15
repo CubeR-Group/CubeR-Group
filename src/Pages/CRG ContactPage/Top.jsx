@@ -1,5 +1,5 @@
 import { useState } from "react";
- 
+import { InlineWidget } from "react-calendly";
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap');
  
@@ -234,7 +234,30 @@ const styles = `
     padding-right: 32px;
     cursor: pointer;
   }
- 
+.booking-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.booking-preview h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #132436;
+  margin: 0;
+}
+
+.booking-preview p {
+  max-width: 320px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
   .btn-send {
     width: 100%;
     display: flex;
@@ -256,29 +279,54 @@ const styles = `
   }
   .btn-send:hover { background: #a84430; }
 `;
- 
+
 function IconCalendar({ size = 14 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 16 16" fill="none">
-      <rect x="1" y="3" width="14" height="12" rx="2" stroke="currentColor" strokeWidth="1.4"/>
-      <path d="M1 7h14" stroke="currentColor" strokeWidth="1.4"/>
-      <path d="M5 1v3M11 1v3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <rect
+        x="1"
+        y="3"
+        width="14"
+        height="12"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.4"
+      />
+      <path d="M1 7h14" stroke="currentColor" strokeWidth="1.4" />
+      <path
+        d="M5 1v3M11 1v3"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
- 
+
 function IconArrow({ size = 12 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 12 12" fill="none">
-      <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path
+        d="M1 6h10M7 2l4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
- 
+
 function IconSend({ size = 14 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 14 14" fill="none">
-      <path d="M12 7H2M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path
+        d="M12 7H2M7 2l5 5-5 5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -286,51 +334,77 @@ function IconSend({ size = 14 }) {
 function IconMail({ size = 14 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 16 12" fill="none">
-      <rect x="1" y="1" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.4"/>
-      <path d="M1 3l6.5 4L14 3" stroke="currentColor" strokeWidth="1.4"/>
+      <rect
+        x="1"
+        y="1"
+        width="14"
+        height="10"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.4"
+      />
+      <path d="M1 3l6.5 4L14 3" stroke="currentColor" strokeWidth="1.4" />
     </svg>
   );
 }
 
- 
 function BookCallCard() {
+  const [showCalendar, setShowCalendar] = useState(false);
+
   return (
     <div className="card">
       <div className="card-eyebrow">
         <IconCalendar size={20} />
         Book a call
       </div>
+
       <h2 className="card-title">30-minute discovery call</h2>
+
       <p className="card-description">
-        Pick a time that works for you. Talk directly with a senior practitioner.
+        Pick a time that works for you. Talk directly with a senior
+        practitioner.
       </p>
- 
-      <div className="calendly-placeholder">
-        <div className="calendly-icon">
-          <IconCalendar size={36} />
+
+      {!showCalendar ? (
+        <div className="booking-preview" onClick={() => setShowCalendar(true)}>
+          <div className="calendly-icon">
+            <IconCalendar size={36} />
+          </div>
+
+          <h3>Let's Talk</h3>
+
+          <p>
+            Book a 30-minute consultation with our team. We'll learn about your
+            goals and explore how CubeR can help.
+          </p>
+
+          <button className="btn-outline">Schedule Now</button>
         </div>
-        <div className="calendly-label">Calendly Embed</div>
-        <div className="calendly-hint">
-          Replace this block with your Calendly inline widget script for live booking.
-        </div>
-      </div>
- 
-      <a href="#" className="btn-outline">
-        Open Calendar <IconArrow />
-      </a>
+      ) : (
+        <InlineWidget
+          url="https://calendly.com/hello-cubergroup/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f8f8ee&text_color=132436&primary_color=ef4e3c%22&month=2026-06"
+          styles={{
+            height: "700px",
+            width: "100%",
+          }}
+        />
+      )}
     </div>
   );
 }
- 
+
 function SendNoteCard() {
   const [form, setForm] = useState({
-    fullName: "", company: "", workEmail: "",
-    interest: "US IT Staffing", message: ""
+    fullName: "",
+    company: "",
+    workEmail: "",
+    interest: "US IT Staffing",
+    message: "",
   });
- 
+
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
- 
+
   return (
     <div className="card">
       <div className="card-eyebrow">
@@ -338,46 +412,78 @@ function SendNoteCard() {
         Send a note
       </div>
       <h2 className="card-title">Tell us about your project</h2>
-      <p className="form-subtitle">A few details help us route you to the right team faster.</p>
- 
+      <p className="form-subtitle">
+        A few details help us route you to the right team faster.
+      </p>
+
       <div className="form-row">
         <div className="form-group" style={{ marginBottom: 0 }}>
           <label className="form-label">Full name</label>
-          <input className="form-input" name="fullName" placeholder="Jane Doe" value={form.fullName} onChange={handleChange} />
+          <input
+            className="form-input"
+            name="fullName"
+            placeholder="Jane Doe"
+            value={form.fullName}
+            onChange={handleChange}
+          />
         </div>
         <div className="form-group" style={{ marginBottom: 0 }}>
           <label className="form-label">Company</label>
-          <input className="form-input" name="company" placeholder="Acme Inc." value={form.company} onChange={handleChange} />
+          <input
+            className="form-input"
+            name="company"
+            placeholder="Acme Inc."
+            value={form.company}
+            onChange={handleChange}
+          />
         </div>
       </div>
- 
+
       <div className="form-group" style={{ marginTop: 12 }}>
         <label className="form-label">Work email</label>
-        <input className="form-input" name="workEmail" type="email" placeholder="jane@acme.com" value={form.workEmail} onChange={handleChange} />
+        <input
+          className="form-input"
+          name="workEmail"
+          type="email"
+          placeholder="jane@acme.com"
+          value={form.workEmail}
+          onChange={handleChange}
+        />
       </div>
- 
+
       <div className="form-group">
         <label className="form-label">I'm interested in</label>
-        <select className="form-select" name="interest" value={form.interest} onChange={handleChange}>
+        <select
+          className="form-select"
+          name="interest"
+          value={form.interest}
+          onChange={handleChange}
+        >
           <option>US IT Staffing</option>
           <option>Product Design</option>
           <option>Engineering</option>
           <option>Consulting</option>
         </select>
       </div>
- 
+
       <div className="form-group">
         <label className="form-label">Message</label>
-        <textarea className="form-textarea" name="message" placeholder="Briefly tell us what you're working on..." value={form.message} onChange={handleChange} />
+        <textarea
+          className="form-textarea"
+          name="message"
+          placeholder="Briefly tell us what you're working on..."
+          value={form.message}
+          onChange={handleChange}
+        />
       </div>
- 
+
       <button className="btn-send">
         Send Message <IconSend />
       </button>
     </div>
   );
 }
- 
+
 export default function Top() {
   return (
     <>
@@ -386,14 +492,15 @@ export default function Top() {
         <div className="hero-section">
           <p className="top-hero-title">Let's start a conversation.</p>
           <p className="hero-subtitle">
-            Book a discovery call directly on our calendar, or send us a note. Either
-            way, you'll hear from a senior team member within one business day.
+            Book a discovery call directly on our calendar, or send us a note.
+            Either way, you'll hear from a senior team member within one
+            business day.
           </p>
           <a href="#" className="btn-primary">
             View Open Positions <IconArrow />
           </a>
         </div>
- 
+
         <div className="cards-row">
           <BookCallCard />
           <SendNoteCard />

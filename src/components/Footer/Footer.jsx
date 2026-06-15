@@ -2,7 +2,7 @@ import "./Footer.css";
 import { LuTwitter } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
 import { Link } from "react-router-dom"; 
-
+import { PiRedditLogoLight } from "react-icons/pi";
 const Footer = () => {
   return (
     <div className="footer">
@@ -29,13 +29,15 @@ const Footer = () => {
             <LuLinkedin />
             </a>
 
+            
+
             <a
-              href="https://twitter.com/YOUR_PROFILE"
+              href="https://www.reddit.com/user/cube-r-group/"
               target="_blank"
               rel="noopener noreferrer"
               className="icon-circle"
             >
-            <LuTwitter />
+            <PiRedditLogoLight />
             </a>
           </div>
         </div>

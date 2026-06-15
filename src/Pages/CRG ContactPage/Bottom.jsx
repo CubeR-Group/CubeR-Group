@@ -115,7 +115,7 @@ export default function Bottom() {
             <div>
               <div className="info-label">Email</div>
               <div className="info-value">
-                <a href="mailto:hello@cubertgroup.com">hello@cubertgroup.com</a>
+                <a href="mailto:hello@cubertgroup.com">hello@cubergroup.com</a>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Bottom() {
             <div>
               <div className="info-label">Phone</div>
               <div className="info-value">
-                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                <a href="tel:+917337513399">+91-7337513399</a>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function Bottom() {
             <div className="info-icon"><IconPin /></div>
             <div>
               <div className="info-label">Headquarters</div>
-              <div className="info-value">Dallas, TX · United States</div>
+              <div className="info-value">Hyderabad, IND . Delaware, U S</div>
             </div>
           </div>
         </div>

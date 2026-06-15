@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-
+import diamond from "../../assets/Our_Partners_logo/diam.png";
+import hit from "../../assets/Our_Partners_logo/hit.png";
+import shield from "../../assets/Our_Partners_logo/shield.png";
 const FeatureCard = ({ item, isMobile }) => {
   const cardRef = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -14,7 +16,7 @@ const FeatureCard = ({ item, isMobile }) => {
       },
       {
         threshold: 0.2,
-      }
+      },
     );
 
     if (cardRef.current) {
@@ -34,8 +36,8 @@ const FeatureCard = ({ item, isMobile }) => {
         flexDirection: isMobile
           ? "column"
           : item.reverse
-          ? "row-reverse"
-          : "row",
+            ? "row-reverse"
+            : "row",
         gap: isMobile ? "24px" : "40px",
         background: "transparent",
         padding: isMobile ? "24px" : "36px",
@@ -54,8 +56,8 @@ const FeatureCard = ({ item, isMobile }) => {
           transform: visible
             ? "translateX(0)"
             : item.reverse
-            ? "translateX(80px)"
-            : "translateX(-80px)",
+              ? "translateX(80px)"
+              : "translateX(-80px)",
           transition: "all 0.9s ease",
         }}
       >
@@ -122,25 +124,22 @@ const HomePageWhyCubeR = () => {
     {
       title: "Outcome-led engagements",
       description:
-        "We measure success by your business KPIs — placements made, features shipped, uptime delivered.",
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
+        "We measure success by your business KPIs – placements made, features shipped, uptime delivered.",
+      image: diamond,
       reverse: false,
     },
     {
       title: "Built-in accountability",
       description:
         "Senior delivery leads on every account. One throat to choke. No subcontracted surprises.",
-      image:
-        "https://cdn-icons-png.flaticon.com/512/1828/1828640.png",
+      image: hit,
       reverse: true,
     },
     {
       title: "Premium standard, every time",
       description:
         "From a single contractor to a 50-engineer build, we apply the same rigor and care.",
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2583/2583344.png",
+      image: shield,
       reverse: false,
     },
   ];
@@ -148,7 +147,8 @@ const HomePageWhyCubeR = () => {
   return (
     <section
       style={{
-        background: "linear-gradient(90deg, #f4e6de 0%, #f7f4ec 50%, #eef2e7 100%)",
+        background:
+          "linear-gradient(90deg, #f4e6de 0%, #f7f4ec 50%, #eef2e7 100%)",
         padding: isMobile ? "70px 5%" : "100px 6%",
       }}
     >
@@ -181,8 +181,7 @@ const HomePageWhyCubeR = () => {
             margin: 0,
           }}
         >
-          Senior expertise.
-          Structured delivery.
+          Senior expertise. Structured delivery.
           <br />
           Zero handoffs.
         </h1>
@@ -199,11 +198,7 @@ const HomePageWhyCubeR = () => {
         }}
       >
         {features.map((item, index) => (
-          <FeatureCard
-            key={index}
-            item={item}
-            isMobile={isMobile}
-          />
+          <FeatureCard key={index} item={item} isMobile={isMobile} />
         ))}
       </div>
     </section>
