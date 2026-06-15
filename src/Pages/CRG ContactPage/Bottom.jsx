@@ -134,7 +134,7 @@ export default function Bottom() {
             <div className="info-icon"><IconPin /></div>
             <div>
               <div className="info-label">Headquarters</div>
-              <div className="info-value">Hyderabad, IND . Delaware, U S</div>
+              <div className="info-value">Hyderabad, IND . Delaware, USA</div>
             </div>
           </div>
         </div>

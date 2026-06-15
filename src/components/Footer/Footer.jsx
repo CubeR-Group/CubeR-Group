@@ -3,16 +3,18 @@ import { LuTwitter } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
 import { Link } from "react-router-dom"; 
 import { PiRedditLogoLight } from "react-icons/pi";
+import logo from "../../assets/NAV_LOGO/CUBER_LOGO.svg";
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-container">
 
         <div className="footer-col logo-col">
-          <div className="logo-box">
-            <span className="cube">CUBE</span>
-            <span className="r">R</span>
-          </div>
+            <div className="nav-logo">
+                   <div className="logo-box">
+                     <img src={logo} alt="CubeR Logo" className="logo-img" />
+                   </div>
+            </div>
 
           <p className="footer-text">
             Premium IT staffing, software engineering, and enterprise
