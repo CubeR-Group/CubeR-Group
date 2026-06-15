@@ -15,7 +15,7 @@ const USITstaffing = () => {
 
           <p>
             Contract, contract-to-hire, and direct placement — backed by a
-            senior recruiting team that knows the difference between a résumé
+            senior recruiting team that knows the difference between a resume
             and a fit.
           </p>
 
