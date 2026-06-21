@@ -1,11 +1,24 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/NAV_LOGO/CUBER_LOGO.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false); // 🔥 NEW
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  const handleBookCall = () => {
+    navigate("/contact", {
+      state: {
+        scrollToBookCall: true,
+      },
+    });
+
+    setMenuOpen(false);
+    setServicesOpen(false);
+  };
 
   return (
     <div className="nav-wrapper">
@@ -18,22 +31,28 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Nav Links */}
+        {/* Navigation */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
 
           <li>
-            <NavLink to="/" onClick={() => setMenuOpen(false)}>
+            <NavLink
+              to="/"
+              onClick={() => setMenuOpen(false)}
+            >
               Home
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+            <NavLink
+              to="/about"
+              onClick={() => setMenuOpen(false)}
+            >
               About
             </NavLink>
           </li>
 
-          {/* 🔥 SERVICES DROPDOWN */}
+          {/* Services Dropdown */}
           <li className="services-menu">
 
             <div
@@ -45,10 +64,14 @@ const Navbar = () => {
 
             {servicesOpen && (
               <ul className="dropdown-menu">
+
                 <li>
                   <NavLink
                     to="/us-it-staffing"
-                    onClick={() => setServicesOpen(false)}
+                    onClick={() => {
+                      setServicesOpen(false);
+                      setMenuOpen(false);
+                    }}
                   >
                     US IT Staffing
                   </NavLink>
@@ -57,7 +80,10 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to="/software-development"
-                    onClick={() => setServicesOpen(false)}
+                    onClick={() => {
+                      setServicesOpen(false);
+                      setMenuOpen(false);
+                    }}
                   >
                     Software Development
                   </NavLink>
@@ -66,23 +92,33 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to="/video-conferencing"
-                    onClick={() => setServicesOpen(false)}
+                    onClick={() => {
+                      setServicesOpen(false);
+                      setMenuOpen(false);
+                    }}
                   >
                     Video Conferencing
                   </NavLink>
                 </li>
+
               </ul>
             )}
           </li>
 
           <li>
-            <NavLink to="/careers" onClick={() => setMenuOpen(false)}>
+            <NavLink
+              to="/careers"
+              onClick={() => setMenuOpen(false)}
+            >
               Careers
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+            <NavLink
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+            >
               Contact
             </NavLink>
           </li>
@@ -91,7 +127,10 @@ const Navbar = () => {
 
         {/* CTA */}
         <div className="nav-cta">
-          <button className="call-btn">
+          <button
+            className="call-btn"
+            onClick={handleBookCall}
+          >
             Book a Call <span className="arrow">→</span>
           </button>
         </div>

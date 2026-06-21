@@ -1,3 +1,6 @@
+import { GrLocation } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
+
 const styles = `
 .roles-section{
   padding:0 20px 120px;
@@ -67,6 +70,9 @@ const styles = `
   color:#47596B;
   font-size:14px;
   font-weight:400;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 
 .job-type{
@@ -86,14 +92,15 @@ const styles = `
   margin:120px auto 0;
   max-width:1000px;
   background:linear-gradient(
-  45deg,
-  #FFFFFF80 50%,
-  #FFFFFFB2 70%,
-  #fff0ee 90%);
+    45deg,
+    #FFFFFF80 50%,
+    #FFFFFFB2 70%,
+    #fff0ee 90%
+  );
   border-radius:24px;
   padding:80px 40px;
   text-align:center;
-  border:1px #FFFFFF solid;
+  border:1px solid #FFFFFF;
 }
 
 .cta-title{
@@ -119,59 +126,65 @@ const styles = `
   cursor:pointer;
 }
 
+.cta-btn:hover{
+  background:#e74c3c;
+}
+
 @media(max-width:768px){
 
-.job-card{
- grid-template-columns:1fr;
- gap:12px;
-}
+  .job-card{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
 
-.roles-title,
-.cta-title{
- font-size:34px;
-}
+  .roles-title,
+  .cta-title{
+    font-size:34px;
+  }
 }
 `;
 
 const jobs = [
   {
-    title:"Senior Full-Stack Engineer",
-    team:"Engineering",
-    location:"Remote · US",
-    type:"FULL-TIME"
+    title: "Senior Full-Stack Engineer",
+    team: "Engineering",
+    location: "Remote · US",
+    type: "FULL-TIME",
   },
   {
-    title:"Technical Recruiter",
-    team:"Staffing",
-    location:"Dallas, TX",
-    type:"FULL-TIME"
+    title: "Technical Recruiter",
+    team: "Staffing",
+    location: "Dallas, TX",
+    type: "FULL-TIME",
   },
   {
-    title:"AI Solutions Architect",
-    team:"Vision Consulting",
-    location:"Remote · US",
-    type:"FULL-TIME"
+    title: "AI Solutions Architect",
+    team: "Vision Consulting",
+    location: "Remote · US",
+    type: "FULL-TIME",
   },
   {
-    title:"Engineering Manager",
-    team:"Engineering",
-    location:"Remote · US",
-    type:"FULL-TIME"
+    title: "Engineering Manager",
+    team: "Engineering",
+    location: "Remote · US",
+    type: "FULL-TIME",
   },
   {
-    title:"Account Director",
-    team:"Client Services",
-    location:"New York, NY",
-    type:"FULL-TIME"
-  }
+    title: "Account Director",
+    team: "Client Services",
+    location: "New York, NY",
+    type: "FULL-TIME",
+  },
 ];
 
 export default function OpenRolesSection() {
+  const navigate = useNavigate();
+
   return (
     <>
       <style>{styles}</style>
 
-      <section className="roles-section">
+      <section id="open-roles" className="roles-section">
         <div className="roles-container">
 
           <div className="roles-tag">
@@ -179,7 +192,7 @@ export default function OpenRolesSection() {
           </div>
 
           <h2 className="roles-title">
-            Currently hiring
+            Currently Hiring
           </h2>
 
           <p className="roles-desc">
@@ -189,9 +202,8 @@ export default function OpenRolesSection() {
           </p>
 
           <div className="jobs-list">
-            {jobs.map((job,index)=>(
+            {jobs.map((job, index) => (
               <div className="job-card" key={index}>
-
                 <div>
                   <div className="job-title">
                     {job.title}
@@ -203,7 +215,8 @@ export default function OpenRolesSection() {
                 </div>
 
                 <div className="job-location">
-                  <locationIcon /> {job.location}
+                  <GrLocation />
+                  {job.location}
                 </div>
 
                 <div className="job-type">
@@ -213,7 +226,6 @@ export default function OpenRolesSection() {
                 <div className="job-arrow">
                   ↗
                 </div>
-
               </div>
             ))}
           </div>
@@ -230,7 +242,16 @@ export default function OpenRolesSection() {
               senior practitioners who care about craft.
             </p>
 
-            <button className="cta-btn">
+            <button
+              className="cta-btn"
+              onClick={() =>
+                navigate("/contact", {
+                  state: {
+                    scrollToBookCall: true,
+                  },
+                })
+              }
+            >
               Book a Call →
             </button>
           </div>
