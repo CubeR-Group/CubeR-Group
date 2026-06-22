@@ -59,7 +59,14 @@ export default function CareerHero() {
             shaping the future of enterprise technology.
           </p>
 
-          <button className="hero-btn">
+          <button
+            className="hero-btn"
+            onClick={() =>
+              document.getElementById("open-roles")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+          >
             View Open Positions →
           </button>
         </div>

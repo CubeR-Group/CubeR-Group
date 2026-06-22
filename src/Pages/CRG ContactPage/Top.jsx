@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { InlineWidget } from "react-calendly";
+import { Link } from "react-router-dom";
+
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap');
  
@@ -496,13 +498,19 @@ export default function Top() {
             Either way, you'll hear from a senior team member within one
             business day.
           </p>
-          <a href="#" className="btn-primary">
-            View Open Positions <IconArrow />
-          </a>
+        <Link
+          to="/careers"
+          state={{ scrollToRoles: true }}
+          className="btn-primary"
+        >
+          View Open Positions <IconArrow />
+        </Link>
         </div>
 
         <div className="cards-row">
-          <BookCallCard />
+          <div id="book-call">
+            <BookCallCard />
+          </div>
           <SendNoteCard />
         </div>
       </section>

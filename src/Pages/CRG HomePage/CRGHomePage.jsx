@@ -11,7 +11,7 @@ const CRGHomePage = () => {
       <HomePageWhoAreWe />
       <HomePageOurServices />
       <HomePageWhyCubeR />
-      {/* <HomePageLeadership /> */}
+      <HomePageLeadership />
     </>
   );
 };

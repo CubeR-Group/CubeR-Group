@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomePageLeadership.css";
 
 const leadershipTeam = [
   {
-    name: "Rajiv Menon",  
+    name: "Rajiv Menon",
     role: "Chief Executive Officer",
     detail: "Leads strategy and client relationships across global engagements.",
     photo:
@@ -33,6 +34,8 @@ const leadershipTeam = [
 ];
 
 const HomePageLeadership = () => {
+  const navigate = useNavigate();
+
   const [focusedIndex, setFocusedIndex] = useState(null);
 
   const handleHover = (index) => {
@@ -46,20 +49,27 @@ const HomePageLeadership = () => {
   return (
     <section className="leadership-section">
       <div className="leadership-inner">
-        <header className="leadership-header">
+
+        {/* <header className="leadership-header">
           <span className="leadership-label">Leadership</span>
           <h2 className="leadership-title">The people behind every engagement.</h2>
           <p className="leadership-description">
             A senior team with decades of combined experience across enterprise
             IT, software, and operations.
           </p>
-        </header>
+        </header> */}
 
-        <div className={`leadership-grid ${focusedIndex ? `grid-focus-${focusedIndex}` : ""}`}>
+        {/* <div className={`leadership-grid ${focusedIndex ? `grid-focus-${focusedIndex}` : ""}`}>
           {leadershipTeam.map((leader, index) => (
             <article
               key={leader.name}
-              className={`leader-card ${focusedIndex === index + 1 ? "leader-card--focused" : focusedIndex ? "leader-card--inactive" : ""}`}
+              className={`leader-card ${
+                focusedIndex === index + 1
+                  ? "leader-card--focused"
+                  : focusedIndex
+                  ? "leader-card--inactive"
+                  : ""
+              }`}
               onMouseEnter={() => handleHover(index + 1)}
               onMouseLeave={handleHoverEnd}
             >
@@ -80,20 +90,36 @@ const HomePageLeadership = () => {
                 </div>
               </div>
             </article>
-          ))}     
-        </div>
+          ))}
+        </div> */}
 
         <div className="leadership-cta">
           <div className="leadership-cta__card">
             <div className="leadership-cta__content">
               <h3>Ready to build what’s next?</h3>
-              <p>Schedule a 30-minute discovery call. No pitch — just a real conversation about your goals.</p>
-              <button className="leadership-cta__button">
+
+              <p>
+                Schedule a 30-minute discovery call. No pitch — just a real
+                conversation about your goals.
+              </p>
+
+              <button
+                className="leadership-cta__button"
+                onClick={() =>
+                  navigate("/contact", {
+                    state: {
+                      scrollToBookCall: true,
+                    },
+                  })
+                }
+              >
                 Book a Call <span aria-hidden="true">→</span>
               </button>
+
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

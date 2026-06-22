@@ -1,3 +1,9 @@
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { RxPeople } from "react-icons/rx";
+import { PiMedalThin } from "react-icons/pi";
+import { CiHeart } from "react-icons/ci";
+
+
 const styles = `
 .why-section{
   padding:20px 20px 120px;
@@ -87,22 +93,22 @@ const styles = `
 
 const benefits = [
   {
-    icon:"↗",
+    icon:<FaArrowTrendUp />,
     title:"Real growth",
     text:"Senior mentorship, generous L&D budget, and clear career paths."
   },
   {
-    icon:"👥",
+    icon:<RxPeople />,
     title:"Senior peers",
     text:"Work alongside practitioners who raise your bar every day."
   },
   {  
-    icon:"💰",
+    icon:<PiMedalThin />,
     title:"Top-tier comp",
     text:"Above-market compensation with full benefits and equity."
   },
   {
-    icon:"⏰",
+    icon: < CiHeart />, 
     title:"Real flexibility",
     text:"Hybrid by default. Outcomes over hours. Time off when you need it."
   }
