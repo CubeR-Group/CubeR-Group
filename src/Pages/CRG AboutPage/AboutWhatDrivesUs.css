@@ -1,0 +1,87 @@
+.drives {
+  padding: 100px 24px;
+}
+
+.drives-header {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.drives-tag {
+  display: inline-block;
+  color: #ef5b47;
+  letter-spacing: 4px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.drives-header h2 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  color: #132238;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.drives-header p {
+  color: #667085;
+  line-height: 1.8;
+}
+.drives-cards {
+  margin-top: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.drive-card {
+  background: #f8f7f5;
+  padding: 42px 34px;
+  border-radius: 24px;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.4s ease;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ef5b47;
+  background: rgba(239, 91, 71, 0.08);
+
+  margin-bottom: 28px;
+}
+
+.drive-card h3 {
+  font-size: 1.35rem;
+  color: #132238;
+  margin-bottom: 18px;
+}
+
+.drive-card p {
+  color: #667085;
+  line-height: 1.9;
+}
+.drive-card:hover {
+  transform: translateY(-12px) scale(1.02);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 40px rgba(239, 91, 71, 0.12);
+}
+@media (max-width: 992px) {
+  .drives-cards {
+    grid-template-columns: 1fr;
+  }
+}

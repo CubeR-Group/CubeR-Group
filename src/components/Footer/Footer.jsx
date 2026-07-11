@@ -15,12 +15,10 @@ const Footer = () => {
                      <img src={logo} alt="CubeR Logo" className="logo-img" />
                    </div>
             </div>
-
           <p className="footer-text">
             Premium IT staffing, software engineering, and enterprise
             communication for ambitious teams.
           </p>
-
           <div className="social-icons">
             <a
               href="https://www.linkedin.com/company/cubergroup"
@@ -30,9 +28,6 @@ const Footer = () => {
             >
             <LuLinkedin />
             </a>
-
-            
-
             <a
               href="https://www.reddit.com/user/cube-r-group/"
               target="_blank"
@@ -43,20 +38,16 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
         <div className="footer-col">
           <Link to="/about" className="footer-link">About</Link>
           <Link to="/careers" className="footer-link">Careers</Link>
           <Link to="/contact" className="footer-link">Contact</Link>
         </div>
-
-     
         <div className="footer-col">
           <Link to="/us-it-staffing" className="footer-link">US IT Staffing</Link>
           <Link to="/software-development" className="footer-link">Software Development</Link>
           <Link to="/video-conferencing" className="footer-link">Video Conferencing</Link>
         </div>
-
         <div className="footer-col">
           <p className="contact-item">hello@cubergroup.com</p>
           <p className="contact-item">+91-7337513399</p>
