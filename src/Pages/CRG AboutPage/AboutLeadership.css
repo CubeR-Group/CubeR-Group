@@ -1,0 +1,162 @@
+.leadership {
+  padding: 100px 24px;
+}
+
+.leadership-container {
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+}
+
+.leadership-tag {
+  color: #ef5b47;
+  letter-spacing: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.leadership-title {
+  margin-top: 22px;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: #132238;
+  font-weight: 500;
+}
+
+.leadership-subtitle {
+  margin-top: 22px;
+  color: #667085;
+  line-height: 1.8;
+}
+.leadership-cards {
+  margin-top: 60px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.leader-card {
+  background: #f8f7f5;
+  border-radius: 22px;
+  padding: 16px;
+  transition: all 0.4s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.08),
+    0 0 35px rgba(239, 91, 71, 0.12);
+}
+
+.leader-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.leader-content {
+  text-align: left;
+  padding: 18px 6px 6px;
+}
+
+.leader-content h3 {
+  color: #132238;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.leader-content p {
+  color: #667085;
+  font-size: 0.92rem;
+}
+.leadership-cta {
+  margin-top: 90px;
+  padding: 80px 30px;
+  border-radius: 32px;
+   background: #f8f7f5
+}
+
+.leadership-cta h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #132238;
+  margin-bottom: 24px;
+}
+
+.leadership-cta p {
+  max-width: 520px;
+  margin: auto;
+  line-height: 1.8;
+  color: #667085;
+}
+
+.leadership-cta button {
+  margin-top: 35px;
+  border: none;
+  background: #ef5b47;
+  color: white;
+  padding: 15px 34px;
+  border-radius: 14px;
+  font-size: 1rem;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: all 0.35s ease;
+}
+
+.leadership-cta button:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(239, 91, 71, 0.3);
+}
+.mobile-arrows {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-arrows {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .mobile-arrows button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .leadership-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-bottom: 15px;
+  }
+
+  .leadership-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .leader-card {
+    min-width: 280px;
+    flex-shrink: 0;
+  }
+}
