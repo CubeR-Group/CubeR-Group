@@ -156,20 +156,21 @@
 }
 
 .section-label {
-  color: #f26a5b;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  color:#EF4E3C;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
 }
 
-.section-title {
-  color: #16243b;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 28px;
+.section-title{
+
+    font-size:46px;
+
+    font-weight:500;
+
+    letter-spacing:-1.5px;
 }
 
 .section-description {
@@ -252,4 +253,200 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+}
+
+/* ===========================
+   OUR PROCESS
+=========================== */
+
+/* ===========================================================
+   OUR PROCESS
+=========================================================== */
+
+.staffing-process{
+    max-width:1180px;
+    margin:130px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.staffing-process .section-label{
+    color:#EF4E3C;
+    font-size:26px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.staffing-process .section-title{
+    color:#17233D;
+    font-size:54px;
+    font-weight:500;
+    line-height:1.1;
+    letter-spacing:-2px;
+    margin-bottom:24px;
+}
+
+.staffing-process .section-description{
+    max-width:760px;
+    margin:0 auto;
+    font-size:17px;
+    line-height:1.7;
+    color:#667085;
+}
+
+/* ================= TOP ROW ================= */
+
+.process-grid-top{
+    margin-top:56px;
+
+    display:grid;
+    grid-template-columns:repeat(2,560px);
+    justify-content:center;
+    gap:22px;
+}
+
+/* ================= BOTTOM ROW ================= */
+
+.process-grid-bottom{
+    margin-top:22px;
+
+    display:grid;
+    grid-template-columns:repeat(3,366px);
+    justify-content:center;
+    gap:22px;
+}
+
+/* ================= CARD ================= */
+
+.process-card{
+
+    background:#fff;
+
+    border:1px solid #F2F4F7;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.03);
+}
+
+.process-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+}
+
+/* ================= IMAGE ================= */
+
+.process-image{
+    height:175px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;   /* Important */
+}
+
+.process-image img{
+    width:60%;
+    max-width:200px;
+    object-fit:contain;
+
+    transform: scale(2.2);   /* Zoom in */
+
+    transition:transform .35s ease;
+}
+
+
+
+/* ================= CONTENT ================= */
+
+.process-content{
+
+    padding:22px 24px 24px;
+
+    text-align:left;
+
+}
+
+.process-number{
+
+    display:block;
+
+    color:#EF4E3C;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.process-content h3{
+
+    color:#16243B;
+
+    font-size:19px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.process-content p{
+
+    color:#667085;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+.process-grid-top{
+
+grid-template-columns:1fr;
+
+}
+
+.process-grid-bottom{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.staffing-process .section-title{
+
+font-size:38px;
+
+}
+
+.process-grid-bottom{
+
+grid-template-columns:1fr;
+
+}
+
+.process-image{
+
+height:150px;
+
+}
+
 }

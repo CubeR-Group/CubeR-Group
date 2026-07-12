@@ -1,16 +1,65 @@
 import "./USITStaffing.css";
 import ServiceCard from "../../components/ServiceCard";
 
+import discoveryImg from "../../assets/usit/discovery.png";
+import sourcingImg from "../../assets/usit/sourcing.png";
+import vettingImg from "../../assets/usit/vetting.png";
+import submissionImg from "../../assets/usit/submission.png";
+import onboardingImg from "../../assets/usit/onboarding.png";
+
 const USITstaffing = () => {
+  const process = [
+    {
+      number: "01",
+      title: "Discovery",
+      image: discoveryImg,
+      description:
+        "We free up your sales team to focus on what they do best—building relationships and closing deals.",
+    },
+
+    {
+      number: "02",
+      title: "Sourcing",
+      image: sourcingImg,
+      description:
+        "Understand your customers better with AI-driven analytics that reveal purchasing patterns, preferences, and potential opportunities.",
+    },
+
+    {
+      number: "03",
+      title: "Vetting",
+      image: vettingImg,
+      description:
+        "Stay ahead of the curve with predictive analytics that help you anticipate market trends and customer behaviors.",
+    },
+
+    {
+      number: "04",
+      title: "Submission",
+      image: submissionImg,
+      description:
+        "Searching for all customers scattered across multiple platforms can be challenging.",
+    },
+
+    {
+      number: "05",
+      title: "Onboarding",
+      image: onboardingImg,
+      description:
+        "We handle compliance, equipment, and ramp-up so you don't have to.",
+    },
+  ];
+
   return (
     <>
-      {/* Hero Section */}
+      {/* ================= HERO ================= */}
+
       <section className="services-hero">
         <div className="services-hero-content">
           <h1>
-            Elite US-based IT talent, placed with
+            Elite US-based IT talent,
             <br />
-            surgical precision.
+            placed with surgical precision.
           </h1>
 
           <p>
@@ -26,13 +75,12 @@ const USITstaffing = () => {
         </div>
       </section>
 
-      {/* Who We Serve */}
+      {/* ================= WHO WE SERVE ================= */}
+
       <section className="who-we-serve">
         <p className="section-label">WHO WE SERVE</p>
 
-        <h2 className="section-title">
-          Built for Businesses That Expect More
-        </h2>
+        <h2 className="section-title">Built for Businesses That Expect More</h2>
 
         <p className="section-description">
           Our clients are leaders in their industries who need more than a
@@ -41,30 +89,81 @@ const USITstaffing = () => {
 
         <p className="section-description second">
           We support organizations across healthcare, finance, manufacturing,
-          education, and professional services with staffing, software
-          development, and collaboration solutions tailored to their goals.
+          education, and professional services.
         </p>
 
         <div className="serve-grid">
           <ServiceCard
             icon="📄"
             title="Enterprise IT"
-            description="Fortune 1000 teams scaling delivery without compromising quality bar."
+            description="Fortune 1000 teams scaling delivery without compromising quality."
           />
 
           <ServiceCard
             icon="🚀"
             title="Growth-stage Tech"
-            description="Series B+ companies needing senior engineers fast, with no-handoff handovers."
+            description="Series B+ companies hiring experienced engineers rapidly."
           />
 
           <ServiceCard
             icon="🏛️"
             title="Public Sector"
-            description="Federal, state and municipal contracts requiring vetted, US-cleared talent."
+            description="Federal, state, and municipal contracts requiring vetted talent."
           />
         </div>
       </section>
+
+      {/* ================= OUR PROCESS ================= */}
+
+      {/* Top Row */}
+      <section className="staffing-process">
+        <p className="section-label">OUR PROCESS</p>
+
+        <h2 className="section-title">
+          A repeatable, transparent recruiting flow.
+        </h2>
+
+        <p className="section-description">
+          Our leadership team brings together decades of experience in
+          technology, business strategy, and client success.
+        </p>
+
+        <div className="process-grid-top">
+          {process.slice(0, 2).map((step) => (
+            <div className="process-card" key={step.number}>
+              <div className="process-image">
+                <img src={step.image} alt={step.title} />
+              </div>
+
+              <div className="process-content">
+                <span className="process-number">{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="process-grid-bottom">
+          {process.slice(2).map((step) => (
+            <div className="process-card" key={step.number}>
+              <div className="process-image">
+                <img src={step.image} alt={step.title} />
+              </div>
+
+              <div className="process-content">
+                <span className="process-number">{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      
+
+      
     </>
   );
 };
