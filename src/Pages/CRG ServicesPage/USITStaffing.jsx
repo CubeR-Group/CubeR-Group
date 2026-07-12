@@ -161,9 +161,59 @@ const USITstaffing = () => {
         </div>
       </section>
 
-      
+      {/* ================= ROLES WE PLACE ================= */}
 
-      
+      <section className="roles-section">
+        <p className="roles-label">ROLES WE PLACE</p>
+
+        <h2 className="roles-title">
+          From senior individual contributors to engineering leadership.
+        </h2>
+
+        <div className="roles-container">
+          {[
+            "Senior Software Engineer",
+            "Cloud Architect",
+            "DevOps Engineer",
+            "Site Reliability Engineer",
+            "Data Engineer",
+            "Machine Learning Engineer",
+            "Product Manager",
+            "Engineering Manager",
+            "Mobile Developer (iOS/Android)",
+            "Full-Stack Developer",
+            "QA Automation Engineer",
+            "Security Engineer",
+            "Salesforce Developer",
+            "SAP Consultant",
+            "ServiceNow Architect",
+            "Business Analyst",
+            "Scrum Master",
+            "UX Designer",
+          ].map((role) => (
+            <span key={role} className="role-pill">
+              {role}
+            </span>
+          ))}
+        </div>
+      </section>
+      {/* ================= FINAL CTA ================= */}
+
+<section className="staffing-final-cta">
+  <div className="staffing-final-card">
+    <h2>Get a curated shortlist in 5 days.</h2>
+
+    <p>
+      Tell us about the role. We'll come back with vetted candidates that
+      actually fit.
+    </p>
+
+    <button className="staffing-final-btn">
+      Book a Call
+      <span>→</span>
+    </button>
+  </div>
+</section>
     </>
   );
 };

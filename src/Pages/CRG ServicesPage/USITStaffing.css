@@ -450,3 +450,257 @@ height:150px;
 }
 
 }
+/* ===================================================
+   ROLES WE PLACE
+=================================================== */
+
+.roles-section{
+    max-width:1280px;
+    margin:130px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.roles-label{
+
+    color:#EF4E3C;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+.roles-title{
+
+    color:#16243B;
+
+    font-size:56px;
+
+    font-weight:500;
+
+    line-height:1.12;
+
+    letter-spacing:-2px;
+
+    max-width:1050px;
+
+    margin:0 auto 42px;
+}
+
+.roles-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    max-width:1180px;
+
+    margin:0 auto;
+}
+
+.role-pill{
+
+    background:#fff;
+
+    border:1px solid #ECECEC;
+
+    border-radius:999px;
+
+    padding:13px 22px;
+
+    color:#667085;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.25s ease;
+
+    cursor:default;
+
+    white-space:nowrap;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.03);
+}
+
+.role-pill:hover{
+
+    background:#EF4E3C;
+
+    color:#fff;
+
+    border-color:#EF4E3C;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(239,78,60,.18);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.roles-title{
+
+font-size:38px;
+
+}
+
+.role-pill{
+
+padding:11px 18px;
+
+font-size:14px;
+
+}
+
+.roles-container{
+
+gap:10px;
+
+}
+
+}
+/* ===================================================
+   FINAL CTA
+=================================================== */
+
+.staffing-final-cta{
+    max-width:1020px;      /* was 1280px */
+    margin:10px auto;
+    padding:0 20px;
+}
+
+.staffing-final-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    padding:72px 20px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    background:
+      linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px),
+      radial-gradient(circle at top right,#FFE7E0 0%,transparent 28%),
+      linear-gradient(135deg,#FFFFFF 0%,#FDFBF8 100%);
+
+    background-size:52px 52px;
+
+    box-shadow:0 12px 40px rgba(0,0,0,.04);
+
+}
+
+.staffing-final-card h2{
+
+    color:#16243B;
+
+    font-size:48px;
+
+    font-weight:500;
+
+    letter-spacing:-2px;
+
+    line-height:1.1;
+
+    margin-bottom:24px;
+
+}
+
+.staffing-final-card p{
+
+    max-width:620px;
+
+    margin:0 auto 36px;
+
+    color:#667085;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.staffing-final-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#EF4E3C;
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.staffing-final-btn:hover{
+
+    background:#FF6B57;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 14px 28px rgba(239,78,60,.28);
+
+}
+
+.staffing-final-btn span{
+
+    font-size:18px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.staffing-final-card{
+
+padding:60px 20px;
+
+}
+
+.staffing-final-card h2{
+
+font-size:38px;
+
+}
+
+.staffing-final-card p{
+
+font-size:16px;
+
+}
+
+}
