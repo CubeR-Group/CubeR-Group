@@ -404,8 +404,78 @@ function SendNoteCard() {
     message: "",
   });
 
+  const [status, setStatus] = useState({ loading: false, success: null, error: null });
+
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+
+  const handleSubmit = async (e) => {
+    if (e) e.preventDefault();
+    if (status.loading) return;
+
+    const trimmedFullName = form.fullName.trim();
+    const trimmedCompany = form.company.trim();
+    const trimmedEmail = form.workEmail.trim();
+    const trimmedInterest = form.interest.trim();
+    const trimmedMessage = form.message.trim();
+
+    // Client-side validations
+    if (!trimmedFullName || !trimmedCompany || !trimmedEmail || !trimmedInterest || !trimmedMessage) {
+      setStatus({ loading: false, success: null, error: "Validation failed. All fields are required." });
+      return;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      setStatus({ loading: false, success: null, error: "Validation failed. Invalid email format." });
+      return;
+    }
+
+    setStatus({ loading: true, success: null, error: null });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: trimmedFullName,
+          company: trimmedCompany,
+          email: trimmedEmail,
+          interest: trimmedInterest,
+          message: trimmedMessage,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus({ loading: false, success: data.message || "Thank you for contacting CubeR.", error: null });
+        // Reset form inputs
+        setForm({
+          fullName: "",
+          company: "",
+          workEmail: "",
+          interest: "US IT Staffing",
+          message: "",
+        });
+      } else {
+        setStatus({
+          loading: false,
+          success: null,
+          error: data.message || "Validation failed."
+        });
+      }
+    } catch (err) {
+      console.error("API submission error:", err);
+      setStatus({
+        loading: false,
+        success: null,
+        error: "Unable to connect to the server. Please try again later."
+      });
+    }
+  };
 
   return (
     <div className="card">
@@ -479,9 +549,20 @@ function SendNoteCard() {
         />
       </div>
 
-      <button className="btn-send">
-        Send Message <IconSend />
+      <button className="btn-send" onClick={handleSubmit} disabled={status.loading}>
+        {status.loading ? "Sending..." : "Send Message"} <IconSend />
       </button>
+
+      {status.success && (
+        <div style={{ color: "#16a34a", fontSize: "0.85rem", marginTop: "12px", textAlign: "center", fontWeight: "500" }}>
+          {status.success}
+        </div>
+      )}
+      {status.error && (
+        <div style={{ color: "#dc2626", fontSize: "0.85rem", marginTop: "12px", textAlign: "center", fontWeight: "500" }}>
+          {status.error}
+        </div>
+      )}
     </div>
   );
 }
