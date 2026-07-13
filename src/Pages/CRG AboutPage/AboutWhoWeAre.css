@@ -1,0 +1,95 @@
+.about-who {
+  padding: 40px 24px;
+}
+
+.about-who-container {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-who-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.about-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.img1 {
+  height: 180px;
+  margin-top: 50px;
+}
+
+.img2 {
+  height: 250px;
+}
+
+.img3 {
+  height: 210px;
+}
+
+.img4 {
+  height: 180px;
+  margin-top: 0;
+}
+.about-tag {
+  display: inline-block;
+  color: #ef5a4c;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.about-who-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  line-height: 1.2;
+  color: #162338;
+  font-weight: 500;
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+.about-who-content p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #5f6b7a;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+@media (max-width: 992px) {
+  .about-who-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .about-who-images {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .about-who-content {
+    text-align: center;
+  }
+
+  .about-who-content h2,
+  .about-who-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-who {
+    padding: 80px 20px;
+  }
+}

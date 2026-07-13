@@ -1,0 +1,726 @@
+/* ==================================================
+   HERO SECTION
+================================================== */
+
+.services-softwaredevelopment-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 20px 70px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.services-softwaredevelopment-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* ==================================================
+   HERO FONT IMPLEMENTATION
+================================================== */
+
+.services-softwaredevelopment-hero-content h1 {
+  font-family: "ManropeSemiBold", sans-serif;
+}
+
+.services-softwaredevelopment-hero-content p {
+  font-family: "InterRegular", sans-serif;
+}
+
+/* ==================================================
+   HERO STYLING
+================================================== */
+
+.services-softwaredevelopment-hero-content h1 {
+  margin: 0;
+  color: #EF4E3C;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.services-softwaredevelopment-hero-content p {
+  max-width: 800px;
+  margin: 36px auto 0;
+  color: #47596B;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   HERO RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+  .services-softwaredevelopment-hero {
+    padding: 90px 20px 50px;
+  }
+
+  .services-softwaredevelopment-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .services-softwaredevelopment-hero-content p {
+    font-size: 17px;
+  }
+}
+
+/* ==================================================
+   SOFTWARE SERVICES SECTION
+================================================== */
+
+.software-services {
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* ==================================================
+   SOFTWARE SERVICES FONT IMPLEMENTATION
+================================================== */
+
+.software-services-label {
+  font-family: "InterMedium", sans-serif;
+}
+
+.software-services-title {
+  font-family: "Manrope", sans-serif;
+}
+
+.software-services-description {
+  font-family: "InterRegular", sans-serif;
+}
+
+/* ==================================================
+   SOFTWARE SERVICES STYLING
+================================================== */
+
+.software-services-label {
+  color: #EF4E3C;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.software-services-title {
+  color: #132436;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.software-services-description {
+  max-width: 820px;
+  margin: 0 auto;
+  color: #47596B;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.software-services-description.second {
+  margin-top: 18px;
+}
+
+.software-services-grid {
+  width: min(100%, 1220px);
+
+  margin: 60px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ==================================================
+   SOFTWARE SERVICE CARD OVERRIDES
+================================================== */
+
+.software-services-grid > div {
+  background: #FFFFFF !important;
+  min-height: 230px !important;
+  padding: 34px !important;
+  border-radius: 24px !important;
+  text-align: left;
+  box-shadow: none !important;
+}
+
+.software-services-grid h2 {
+  font-family: "ManropeBold", sans-serif;
+  font-size: 20px !important;
+  line-height: 1.3;
+  margin: 22px 0 14px !important;
+}
+
+.software-services-grid p {
+  font-family: "InterRegular", sans-serif;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+  color: #47596B;
+}
+
+/* Icon */
+
+.software-services-grid .service-card-icon,
+.software-services-grid .card-icon {
+  width: 48px !important;
+  height: 48px !important;
+  margin-bottom: 14px !important;
+}
+
+/* Hide Learn More */
+
+.software-services-grid > div div:last-child {
+  display: none !important;
+}
+/* ==================================================
+   SOFTWARE SERVICES RESPONSIVE
+================================================== */
+
+@media (max-width: 1024px) {
+  .software-services-title {
+    font-size: 44px;
+  }
+
+  .software-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .software-services {
+    padding: 60px 20px 100px;
+  }
+
+  .software-services-title {
+    font-size: 36px;
+  }
+
+  .software-services-description {
+    font-size: 16px;
+  }
+
+  .software-services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* ==================================================
+     MOBILE SERVICE CARD ALIGNMENT
+  ================================================== */
+
+  .software-services-grid>div {
+    text-align: center !important;
+  }
+
+  .software-services-grid .service-icon {
+    margin: 0 auto 24px !important;
+  }
+
+  .software-services-grid h2 {
+    text-align: center !important;
+  }
+
+  .software-services-grid p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ==================================================
+   SOFTWARE PROCESS LAYOUT
+================================================== */
+
+.software-process {
+  padding: 100px 20px 20px;
+  text-align: center;
+}
+
+.software-process-grid {
+  width: min(100%, 1360px);
+  margin: 70px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* ==================================================
+   SOFTWARE PROCESS FONT IMPLEMENTATION
+================================================== */
+
+.software-process-label {
+  font-family: "InterMedium", sans-serif;
+}
+
+.software-process-title {
+  font-family: "Manrope", sans-serif;
+}
+
+.software-process-description {
+  font-family: "InterRegular", sans-serif;
+}
+
+.software-process-number {
+  font-family: "ManropeBold", sans-serif;
+}
+
+.software-process-heading {
+  font-family: "ManropeBold", sans-serif;
+}
+.software-process-text {
+  font-family: "InterRegular", sans-serif;
+}
+
+/* ==================================================
+   SOFTWARE PROCESS STYLING
+================================================== */
+
+.software-process-label {
+  color: #EF4E3C;
+
+  font-size: 32px;
+
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.software-process-title {
+  color: #132436;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.software-process-description {
+  max-width: 930px;
+  margin: 0 auto;
+
+  font-weight: 400;
+  color: #47596B;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .software-process-description {
+    white-space: normal;
+    max-width: 690px;
+  }
+}
+
+@media (max-width: 768px) {
+  .software-process-description {
+    white-space: normal;
+    max-width: 100%;
+  }
+}
+
+/* ==================================================
+   PROCESS CARD
+================================================== */
+
+.software-process-card {
+  background: #ffffff;
+  border-radius: 26px;
+
+  padding: 30px 34px 16px;
+
+  min-height: 185px;
+
+  border: 1px solid transparent;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.software-process-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(247, 128, 115, 0.45);
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(242, 106, 91, 0.05);
+}
+
+/* ==================================================
+   CARD CONTENT
+================================================== */
+
+.software-process-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.software-process-number {
+  color: #EF4E3C;
+  font-size: 30px;
+  line-height: 36px;
+  flex-shrink: 0;
+
+}
+
+.software-process-heading {
+  color: #132436;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 0;
+}
+
+.software-process-text {
+  color: #47596B;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+  text-align: left;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1024px) {
+  .software-process-title {
+    font-size: 40px;
+  }
+
+  .software-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .software-process {
+    padding: 80px 20px 100px;
+  }
+
+  .software-process-title {
+    font-size: 34px;
+  }
+
+  .software-process-description {
+    font-size: 16px;
+  }
+
+  .software-process-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .software-process-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .software-process-header {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .software-process-number {
+    font-size: 32px;
+  }
+
+  .software-process-heading {
+    font-size: 20px;
+  }
+}
+
+/* ==================================================
+   TECH CAPABILITIES LAYOUT
+================================================== */
+
+.software-tech {
+  padding: 90px 20px 20px;
+  text-align: center;
+}
+
+.software-tech-grid {
+  max-width: 1360px;
+  margin: 60px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ==================================================
+   TECH CAPABILITIES FONT IMPLEMENTATION
+================================================== */
+
+.software-tech-label {
+  font-family: "InterMedium", sans-serif;
+}
+
+.software-tech-title {
+  font-family: "Manrope", sans-serif;
+}
+
+.software-tech-text {
+  font-family: "InterMedium", sans-serif;
+}
+
+/* ==================================================
+   TECH CAPABILITIES STYLING
+================================================== */
+
+.software-tech-label {
+  color: #ef4e3c;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.software-tech-title {
+  color: #132436;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.software-tech-card {
+  background: #ffffff;
+  border-radius: 22px;
+  min-height: 88px;
+  font-size: 18px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid transparent;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.software-tech-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(247, 128, 115, 0.45);
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(242, 106, 91, 0.05);
+}
+
+.software-tech-icon {
+  width: 44px;
+  height: 44px;
+
+  background: #FDEBE6;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ef4e3c;
+
+  flex-shrink: 0;
+}
+
+.software-tech-text {
+  margin: 0;
+
+  color: #132436;
+
+  font-size: 18px;
+  /* TODO */
+
+  line-height: 1.4;
+
+  text-align: left;
+}
+
+/* ==================================================
+   TECH CAPABILITIES RESPONSIVE
+================================================== */
+
+@media (max-width: 1024px) {
+  .software-tech-title {
+    font-size: 40px;
+  }
+
+  .software-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .software-tech {
+    padding: 80px 20px 100px;
+  }
+
+  .software-tech-title {
+    font-size: 34px;
+  }
+
+  .software-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .software-tech-card {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .software-tech-text {
+    text-align: center;
+  }
+}
+/* ==================================================
+   SOFTWARE CTA
+================================================== */
+
+.software-cta {
+  padding: 110px 20px 140px;
+}
+
+.software-cta-container {
+  max-width: 1150px;
+  margin: 0 auto;
+
+  padding: 90px 40px;
+
+  border-radius: 32px;
+
+  background: #f8f7f5;
+
+  text-align: center;
+}
+
+/* ==================================================
+   SOFTWARE CTA FONT IMPLEMENTATION
+================================================== */
+
+.software-cta h2 {
+  font-family: "Manrope", sans-serif;
+}
+
+.software-cta p {
+  font-family: "InterRegular", sans-serif;
+}
+
+.software-cta button {
+  font-family: "InterMedium", sans-serif;
+}
+
+/* ==================================================
+   SOFTWARE CTA STYLING
+================================================== */
+
+.software-cta h2 {
+  color: #132238;
+
+  font-size: 48px;
+  /* TODO */
+
+  font-weight: 500;
+  line-height: 1.15;
+
+  margin-bottom: 24px;
+}
+
+.software-cta p {
+  max-width: 520px;
+  margin: 0 auto;
+
+  color: #667085;
+
+  font-size: 18px;
+  /* TODO */
+
+  line-height: 1.8;
+}
+
+.software-cta button {
+  margin-top: 35px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 15px 34px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #ef5b47;
+  color: #ffffff;
+
+  font-size: 16px;
+  /* TODO */
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.software-cta button:hover {
+  transform: translateY(-5px);
+
+  background: #e44e39;
+
+  box-shadow: 0 15px 35px rgba(239, 91, 71, 0.3);
+}
+
+.software-cta button svg {
+  transition: transform 0.35s ease;
+}
+
+.software-cta button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==================================================
+   SOFTWARE CTA RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+  .software-cta {
+    margin-top: 70px;
+    padding: 60px 24px;
+    border-radius: 24px;
+  }
+
+  .software-cta h2 {
+    font-size: 34px;
+  }
+
+  .software-cta p {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .software-cta button {
+    padding: 14px 28px;
+  }
+}

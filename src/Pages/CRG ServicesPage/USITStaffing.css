@@ -156,20 +156,21 @@
 }
 
 .section-label {
-  color: #f26a5b;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  color:#EF4E3C;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
 }
 
-.section-title {
-  color: #16243b;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 28px;
+.section-title{
+
+    font-size:46px;
+
+    font-weight:500;
+
+    letter-spacing:-1.5px;
 }
 
 .section-description {
@@ -252,4 +253,454 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+}
+
+/* ===========================
+   OUR PROCESS
+=========================== */
+
+/* ===========================================================
+   OUR PROCESS
+=========================================================== */
+
+.staffing-process{
+    max-width:1180px;
+    margin:130px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.staffing-process .section-label{
+    color:#EF4E3C;
+    font-size:26px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.staffing-process .section-title{
+    color:#17233D;
+    font-size:54px;
+    font-weight:500;
+    line-height:1.1;
+    letter-spacing:-2px;
+    margin-bottom:24px;
+}
+
+.staffing-process .section-description{
+    max-width:760px;
+    margin:0 auto;
+    font-size:17px;
+    line-height:1.7;
+    color:#667085;
+}
+
+/* ================= TOP ROW ================= */
+
+.process-grid-top{
+    margin-top:56px;
+
+    display:grid;
+    grid-template-columns:repeat(2,560px);
+    justify-content:center;
+    gap:22px;
+}
+
+/* ================= BOTTOM ROW ================= */
+
+.process-grid-bottom{
+    margin-top:22px;
+
+    display:grid;
+    grid-template-columns:repeat(3,366px);
+    justify-content:center;
+    gap:22px;
+}
+
+/* ================= CARD ================= */
+
+.process-card{
+
+    background:#fff;
+
+    border:1px solid #F2F4F7;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.03);
+}
+
+.process-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+}
+
+/* ================= IMAGE ================= */
+
+.process-image{
+    height:175px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;   /* Important */
+}
+
+.process-image img{
+    width:60%;
+    max-width:200px;
+    object-fit:contain;
+
+    transform: scale(2.2);   /* Zoom in */
+
+    transition:transform .35s ease;
+}
+
+
+
+/* ================= CONTENT ================= */
+
+.process-content{
+
+    padding:22px 24px 24px;
+
+    text-align:left;
+
+}
+
+.process-number{
+
+    display:block;
+
+    color:#EF4E3C;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.process-content h3{
+
+    color:#16243B;
+
+    font-size:19px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.process-content p{
+
+    color:#667085;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+.process-grid-top{
+
+grid-template-columns:1fr;
+
+}
+
+.process-grid-bottom{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.staffing-process .section-title{
+
+font-size:38px;
+
+}
+
+.process-grid-bottom{
+
+grid-template-columns:1fr;
+
+}
+
+.process-image{
+
+height:150px;
+
+}
+
+}
+/* ===================================================
+   ROLES WE PLACE
+=================================================== */
+
+.roles-section{
+    max-width:1280px;
+    margin:130px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.roles-label{
+
+    color:#EF4E3C;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+.roles-title{
+
+    color:#16243B;
+
+    font-size:56px;
+
+    font-weight:500;
+
+    line-height:1.12;
+
+    letter-spacing:-2px;
+
+    max-width:1050px;
+
+    margin:0 auto 42px;
+}
+
+.roles-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    max-width:1180px;
+
+    margin:0 auto;
+}
+
+.role-pill{
+
+    background:#fff;
+
+    border:1px solid #ECECEC;
+
+    border-radius:999px;
+
+    padding:13px 22px;
+
+    color:#667085;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.25s ease;
+
+    cursor:default;
+
+    white-space:nowrap;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.03);
+}
+
+.role-pill:hover{
+
+    background:#EF4E3C;
+
+    color:#fff;
+
+    border-color:#EF4E3C;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(239,78,60,.18);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.roles-title{
+
+font-size:38px;
+
+}
+
+.role-pill{
+
+padding:11px 18px;
+
+font-size:14px;
+
+}
+
+.roles-container{
+
+gap:10px;
+
+}
+
+}
+/* ===================================================
+   FINAL CTA
+=================================================== */
+
+.staffing-final-cta{
+    max-width:1020px;      /* was 1280px */
+    margin:10px auto;
+    padding:0 20px;
+}
+
+.staffing-final-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    padding:72px 20px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    background:
+      linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px),
+      radial-gradient(circle at top right,#FFE7E0 0%,transparent 28%),
+      linear-gradient(135deg,#FFFFFF 0%,#FDFBF8 100%);
+
+    background-size:52px 52px;
+
+    box-shadow:0 12px 40px rgba(0,0,0,.04);
+
+}
+
+.staffing-final-card h2{
+
+    color:#16243B;
+
+    font-size:48px;
+
+    font-weight:500;
+
+    letter-spacing:-2px;
+
+    line-height:1.1;
+
+    margin-bottom:24px;
+
+}
+
+.staffing-final-card p{
+
+    max-width:620px;
+
+    margin:0 auto 36px;
+
+    color:#667085;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.staffing-final-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#EF4E3C;
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.staffing-final-btn:hover{
+
+    background:#FF6B57;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 14px 28px rgba(239,78,60,.28);
+
+}
+
+.staffing-final-btn span{
+
+    font-size:18px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.staffing-final-card{
+
+padding:60px 20px;
+
+}
+
+.staffing-final-card h2{
+
+font-size:38px;
+
+}
+
+.staffing-final-card p{
+
+font-size:16px;
+
+}
+
 }
