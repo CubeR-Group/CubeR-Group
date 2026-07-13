@@ -1,5 +1,6 @@
 import "./VideoConferencing.css";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { BsBuilding } from "react-icons/bs";
 import { MdOutlineHub } from "react-icons/md";
 import { RiCustomerService2Line } from "react-icons/ri";
@@ -16,11 +17,21 @@ import conferenceIcon from "../../assets/video-conferencing/conference-room.png"
 import hybridIcon from "../../assets/video-conferencing/hybrid-workforce.png";
 import managedIcon from "../../assets/video-conferencing/managed-services.png";
 import { FiShield, FiWifi, FiSettings, FiVideo } from "react-icons/fi";
-
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { LuUsers } from "react-icons/lu";
+
 function VideoConferencing() {
   const statsRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleBookCall = () => {
+    navigate("/contact", {
+      state: {
+        scrollToBookCall: true,
+      },
+    });
+  };
+
   const features = [
     {
       icon: <FiShield />,
@@ -54,6 +65,7 @@ function VideoConferencing() {
       description: "Certified hardware curated for every room size.",
     },
   ];
+
   const solutions = [
     {
       icon: conferenceIcon,
@@ -74,6 +86,7 @@ function VideoConferencing() {
         "24/7 monitoring, white-glove support, and SLA-backed uptime.",
     },
   ];
+
   const partners = [
     { src: buildHive, alt: "BuildHive" },
     { src: corpus, alt: "Corpus" },
@@ -162,6 +175,7 @@ function VideoConferencing() {
           ))}
         </div>
       </section>
+
       <section className="vc-features">
         <p className="vc-feature-tag">FEATURES & BENEFITS</p>
 
@@ -188,29 +202,29 @@ function VideoConferencing() {
           ))}
         </div>
       </section>
+
       <section className="vc-cta">
+        <div className="vc-cta-card">
+          <h2>
+            Ready to upgrade how
+            <br />
+            your teams meet?
+          </h2>
 
-  <div className="vc-cta-card">
+          <p>
+            Schedule a 30-minute discovery call. No pitch — just a real
+            conversation about your collaboration goals and how we can help.
+          </p>
 
-    <h2>
-      Ready to upgrade how
-      <br />
-      your teams meet?
-    </h2>
-
-    <p>
-      Schedule a 30-minute discovery call. No pitch — just a real
-      conversation about your collaboration goals and how we can help.
-    </p>
-
-    <button className="vc-cta-button">
-      Book a Call
-      <span>→</span>
-    </button>
-
-  </div>
-
-</section>
+          <button
+            className="vc-cta-button"
+            onClick={handleBookCall}
+          >
+            Book a Call
+            <span>→</span>
+          </button>
+        </div>
+      </section>
     </div>
   );
 }

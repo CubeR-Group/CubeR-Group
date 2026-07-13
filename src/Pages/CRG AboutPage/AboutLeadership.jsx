@@ -1,6 +1,7 @@
 import "./AboutLeadership.css";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 // const team = [
 //   {
@@ -27,6 +28,7 @@ import { useRef } from "react";
 
 const AboutLeadership = () => {
   const sliderRef = useRef();
+  const navigate = useNavigate();
 
   const scroll = (direction) => {
     if (!sliderRef.current) return;
@@ -36,6 +38,14 @@ const AboutLeadership = () => {
     sliderRef.current.scrollBy({
       left: direction === "left" ? -amount : amount,
       behavior: "smooth",
+    });
+  };
+
+  const handleBookCall = () => {
+    navigate("/contact", {
+      state: {
+        scrollToBookCall: true,
+      },
     });
   };
 
@@ -84,7 +94,7 @@ const AboutLeadership = () => {
             conversation about your goals.
           </p>
 
-          <button>
+          <button onClick={handleBookCall}>
             Book a Call
             <ArrowRight size={18} />
           </button>
