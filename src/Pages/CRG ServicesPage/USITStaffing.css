@@ -4,11 +4,11 @@
 
 .services-hero {
   position: relative;
-  min-height: 720px;
+  min-height: 520px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 20px;
+  padding: 70px 20px 50px;
   overflow: hidden;
 
   background: transparent;
@@ -44,7 +44,15 @@
 .services-hero-content h1 {
   margin: 0;
 
-  color: #f26a5b;
+  background: linear-gradient(to bottom,
+      #EF4E3C 0%,
+      rgba(239, 78, 60, 0.6) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
   font-size: 56px;
   font-weight: 600;
   line-height: 1.15;
@@ -80,8 +88,8 @@
 
   margin-top: 40px;
 
-  background: #f15a4a;
-  color: #fff;
+  background: #EF4E3C;
+  color: #FFFFFF;
 
   border: none;
   border-radius: 10px;
@@ -89,6 +97,7 @@
   padding: 18px 38px;
 
   font-size: 16px;
+  font-family: "Manrope";
   font-weight: 500;
 
   cursor: pointer;
@@ -99,7 +108,7 @@
     box-shadow 0.3s ease;
 }
 .hero-btn:hover {
-  background: #ff7a68;
+  background: #EF4E3C;
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(255, 122, 104, 0.25);
 }
@@ -157,26 +166,26 @@
 
 .section-label {
   color:#EF4E3C;
-    font-size:16px;
-    font-weight:600;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:20px;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom:12px;
+  font-family: "InterMedium", sans-serif;
 }
 
 .section-title{
-
-    font-size:46px;
-
-    font-weight:500;
-
-    letter-spacing:-1.5px;
+  font-family: "Manrope", sans-serif;
+  color: #132436;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 26px;
 }
 
 .section-description {
-  max-width: 900px;
+  max-width: 940px;
   margin: 0 auto;
-  color: #5d6b80;
+  color: #47596B;
   font-size: 18px;
   line-height: 1.8;
 }
@@ -186,7 +195,7 @@
 }
 
 .serve-grid {
-  max-width: 1200px;
+  max-width: 1312px;
   margin: 60px auto 0;
 
   display: grid;
@@ -198,33 +207,12 @@
    CARD OVERRIDES
 =========================== */
 
-.serve-grid > div {
-  background: #f8f8f8 !important;
-  min-height: 180px !important;
-  border-radius: 18px !important;
-  text-align: left;
-}
-
-.serve-grid h2 {
-  font-size: 28px !important;
-  margin-bottom: 12px !important;
-}
-
 .serve-grid p {
-  font-size: 16px !important;
-  line-height: 1.7 !important;
-  margin-bottom: 0 !important;
+  margin: 0 !important;
 }
-
-/* Hide Learn More for this section */
-
 .serve-grid > div div:last-child {
   display: none !important;
 }
-
-/* ===========================
-   RESPONSIVE
-=========================== */
 
 @media (max-width: 1024px) {
   .section-title {
@@ -253,15 +241,33 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  /* ==================================================
+     MOBILE SERVICE CARD ALIGNMENT
+  ================================================== */
+
+  .serve-grid>div {
+    text-align: center !important;
+  }
+
+  .serve-grid .service-icon {
+    margin: 0 auto 24px !important;
+  }
+
+  .serve-grid h2 {
+    text-align: center !important;
+  }
+
+  .serve-grid p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 /* ===========================
    OUR PROCESS
 =========================== */
-
-/* ===========================================================
-   OUR PROCESS
-=========================================================== */
 
 .staffing-process{
     max-width:1180px;

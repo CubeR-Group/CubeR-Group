@@ -6,7 +6,7 @@ import sourcingImg from "../../assets/usit/sourcing.png";
 import vettingImg from "../../assets/usit/vetting.png";
 import submissionImg from "../../assets/usit/submission.png";
 import onboardingImg from "../../assets/usit/onboarding.png";
-
+import { Building2, Rocket, Landmark } from "lucide-react";
 const USITstaffing = () => {
   const process = [
     {
@@ -57,15 +57,17 @@ const USITstaffing = () => {
       <section className="services-hero">
         <div className="services-hero-content">
           <h1>
-            Elite US-based IT talent,
+            Elite US-based IT talent, placed with
             <br />
-            placed with surgical precision.
+            surgical precision.
           </h1>
 
           <p>
             Contract, contract-to-hire, and direct placement — backed by a
-            senior recruiting team that knows the difference between a resume
-            and a fit.
+            senior
+            <br />
+            recruiting team that knows the difference between a resume and a
+            fit.
           </p>
 
           <button className="hero-btn">
@@ -89,24 +91,25 @@ const USITstaffing = () => {
 
         <p className="section-description second">
           We support organizations across healthcare, finance, manufacturing,
-          education, and professional services.
+          education, and professional services with staffing, software
+          development, and collaboration solutions tailored to their goals.
         </p>
 
         <div className="serve-grid">
           <ServiceCard
-            icon="📄"
+            icon={<Building2 size={24} strokeWidth={1.8} />}
             title="Enterprise IT"
             description="Fortune 1000 teams scaling delivery without compromising quality."
           />
 
           <ServiceCard
-            icon="🚀"
+            icon={<Rocket size={24} strokeWidth={1.8} />}
             title="Growth-stage Tech"
             description="Series B+ companies hiring experienced engineers rapidly."
           />
 
           <ServiceCard
-            icon="🏛️"
+            icon={<Landmark size={24} strokeWidth={1.8} />}
             title="Public Sector"
             description="Federal, state, and municipal contracts requiring vetted talent."
           />
@@ -199,21 +202,21 @@ const USITstaffing = () => {
       </section>
       {/* ================= FINAL CTA ================= */}
 
-<section className="staffing-final-cta">
-  <div className="staffing-final-card">
-    <h2>Get a curated shortlist in 5 days.</h2>
+      <section className="staffing-final-cta">
+        <div className="staffing-final-card">
+          <h2>Get a curated shortlist in 5 days.</h2>
 
-    <p>
-      Tell us about the role. We'll come back with vetted candidates that
-      actually fit.
-    </p>
+          <p>
+            Tell us about the role. We'll come back with vetted candidates that
+            actually fit.
+          </p>
 
-    <button className="staffing-final-btn">
-      Book a Call
-      <span>→</span>
-    </button>
-  </div>
-</section>
+          <button className="staffing-final-btn">
+            Book a Call
+            <span>→</span>
+          </button>
+        </div>
+      </section>
     </>
   );
 };

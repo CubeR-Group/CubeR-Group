@@ -32,6 +32,11 @@
     font-family: 'ManropeBold';
     src: url('./assets/fonts/Manrope-Bold.ttf');
 }
+@font-face {
+  font-family: 'ManropeExtraBold';
+  src: url('./assets/fonts/Manrope-ExtraBold.ttf');
+}
+
 
 body {
   width: 100%;
