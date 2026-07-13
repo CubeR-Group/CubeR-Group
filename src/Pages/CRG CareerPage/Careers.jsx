@@ -16,7 +16,6 @@ export default function Career() {
           block: "start",
         });
 
-        // Clear the state after scrolling
         navigate(location.pathname, {
           replace: true,
           state: {},
