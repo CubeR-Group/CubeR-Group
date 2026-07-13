@@ -7,37 +7,40 @@ const ServiceCard = ({ icon, title, description }) => {
         padding: "28px",
         minHeight: "240px",
         transition: "all 0.35s ease",
+        textAlign: "left",
         cursor: "pointer",
         position: "relative",
         overflow: "hidden",
         backgroundClip: "padding-box",
+        border: "1px solid transparent",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-8px)";
+        e.currentTarget.style.borderColor = "#EF4E3C";
 
         e.currentTarget.style.background =
           "radial-gradient(circle at top right, rgba(240,91,67,0.05) 0%, rgba(240,91,67,0.02) 12%, #FFFFFF 45%)";
 
         e.currentTarget.style.boxShadow =
-          "0 15px 30px rgba(0,0,0,0.06), inset 0 0 0 2px rgba(247,128,115,0.55)";
+          "0 10px 24px rgba(15,23,42,0.06), 0 2px 8px rgba(239,78,60,0.08)";
 
         const iconBox = e.currentTarget.querySelector(".service-icon");
 
         if (iconBox) {
-          iconBox.style.boxShadow =
-            "0 4px 16px rgba(240,91,67,0.18), inset 0 0 0 2px rgba(247,128,115,0.55)";
+          iconBox.style.boxShadow = iconBox.style.boxShadow =
+            "0 4px 16px rgba(239,78,60,0.18), inset 0 0 0 1px #EF4E3C";
         }
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = "translateY(0)";
         e.currentTarget.style.background = "#FFFFFF";
+        e.currentTarget.style.borderColor = "transparent";
         e.currentTarget.style.boxShadow = "none";
 
         const iconBox = e.currentTarget.querySelector(".service-icon");
 
         if (iconBox) {
-          iconBox.style.boxShadow =
-            "0 2px 8px rgba(240,91,67,0.12)";
+          iconBox.style.boxShadow = "0 2px 8px rgba(239,78,60,0.12)";
         }
       }}
     >
@@ -45,16 +48,16 @@ const ServiceCard = ({ icon, title, description }) => {
       <div
         className="service-icon"
         style={{
-          width: "44px",
-          height: "44px",
-          background: "#fdebe6",
+          width: "48px",
+          height: "48px",
+          background: "#FFFFFF",
           borderRadius: "12px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginBottom: "24px",
+          marginBottom: "14px",
           fontSize: "18px",
-          color: "#f05b43",
+          color: "#EF4E3C",
           boxShadow: "0 2px 8px rgba(240,91,67,0.12)",
           transition: "all 0.35s ease",
         }}
@@ -66,10 +69,11 @@ const ServiceCard = ({ icon, title, description }) => {
       <h2
         style={{
           fontSize: "20px",
-          color: "#0f172a",
+          color: "#132436",
           marginBottom: "12px",
-          lineHeight: "1.3",
-          fontFamily: "ManropeBold",
+          lineHeight: "28px",
+          fontFamily: "Manrope",
+          fontWeight: "700",
         }}
       >
         {title}
@@ -78,9 +82,9 @@ const ServiceCard = ({ icon, title, description }) => {
       {/* Description */}
       <p
         style={{
-          color: "#5b6778",
-          lineHeight: "1.8",
-          fontSize: "15px",
+          color: "#47596B",
+          lineHeight: "26px",
+          fontSize: "16px",
           marginBottom: "30px",
           maxWidth: "280px",
           fontFamily: "InterRegular",
